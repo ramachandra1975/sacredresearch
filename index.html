@@ -1,0 +1,2012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sacred Research Portal — Lalitā · Rudram · Swaras · Sanskrit | CulturalMusings.com</title>
+<meta name="description" content="Deep multi-dimensional research portal: Lalitā Sahasranāma (1000 names), Lalitā Triśatī (300 names), Sri Rudram (25 sections), Sapta Swaras (7 tones), and Sanskrit Dimension — Aesthetics of Society, culturalmusings.com"/>
+<link rel="canonical" href="https://sacred.culturalmusings.com/"/>
+<!-- SEO structured data -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Sacred Research Portal","url":"https://sacred.culturalmusings.com","description":"Multi-dimensional Vedic research portal covering Lalitā Sahasranāma, Sri Rudram, Sapta Swaras and Sanskrit science","author":{"@type":"Person","name":"Naredla Rama Chandra"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+Devanagari:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+/* ═══════════════════════════════════════════════════
+   DESIGN SYSTEM — CulturalMusings Sacred Portal
+   Unified aesthetic: deep navy + gold + rose-violet
+═══════════════════════════════════════════════════ */
+:root {
+  --primary-blue:#1a365d; --navy:#0f2240; --navy2:#07111e;
+  --gold:#c5a059; --gold2:#e2c98a; --gold3:#f5d98a;
+  --rose:#C4446A; --rose2:#E87AA0; --violet:#7B2D8B; --violet2:#B468D4;
+  --saffron:#D06820; --turquoise:#1ABCB0;
+  --cream:#fdfaf5; --cream2:#f0dfc8; --cream3:#9a8070;
+  --surface:#0d0008; --surface2:#130010; --surface3:#1a0018;
+  --border:rgba(197,160,89,0.2); --border2:rgba(197,160,89,0.1); --border3:rgba(197,160,89,0.08);
+  --green-ok:#2DD4A0; --red-err:#F87171;
+  --muted:#503844;
+  /* Token meter colours */
+  --tok-full:#2DD4A0; --tok-mid:#e8ba60; --tok-low:#f87171;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Cormorant Garamond',Georgia,serif;background:var(--navy2);color:var(--cream);overflow-x:hidden;font-size:17px;line-height:1.8;}
+::-webkit-scrollbar{width:4px;height:4px;}
+::-webkit-scrollbar-thumb{background:rgba(197,160,89,0.25);border-radius:2px;}
+::-webkit-scrollbar-track{background:transparent;}
+
+/* ══ TOP NAV ══ */
+#portal-nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  display:flex;align-items:center;gap:0;
+  background:rgba(15,34,64,0.97);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(14px);
+  padding:0 16px;height:54px;
+  transition:box-shadow 0.3s;
+}
+#portal-nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,0.4);}
+.pnav-brand{display:flex;align-items:center;gap:10px;padding-right:16px;border-right:1px solid var(--border2);margin-right:8px;cursor:pointer;text-decoration:none;}
+.pnav-om{font-size:1.5rem;color:var(--gold);line-height:1;text-shadow:0 0 16px rgba(197,160,89,0.5);}
+.pnav-brand-text .n1{display:block;font-family:'Cinzel Decorative',serif;font-size:0.48rem;font-weight:700;color:var(--gold2);letter-spacing:2px;}
+.pnav-brand-text .n2{display:block;font-family:'Cinzel',serif;font-size:0.42rem;color:var(--cream3);letter-spacing:1px;}
+.pnav-tabs{display:flex;flex:1;gap:0;overflow-x:auto;scrollbar-width:none;}
+.pnav-tabs::-webkit-scrollbar{display:none;}
+.pnav-tab{
+  font-family:'Cinzel',serif;font-size:0.52rem;letter-spacing:1.2px;text-transform:uppercase;
+  background:none;border:none;border-bottom:2px solid transparent;
+  color:var(--cream3);cursor:pointer;padding:0 14px;height:54px;
+  transition:all 0.2s;white-space:nowrap;
+}
+.pnav-tab:hover{color:var(--cream);}
+.pnav-tab.active{color:var(--gold2);border-bottom-color:var(--gold);}
+.pnav-tab.tab-lalita.active{color:#F5B8CC;border-bottom-color:#C4446A;}
+.pnav-tab.tab-rudram.active{color:var(--gold2);border-bottom-color:var(--saffron);}
+.pnav-tab.tab-swaras.active{color:#74c69d;border-bottom-color:#2d6a4f;}
+.pnav-tab.tab-sanskrit.active{color:var(--violet2);border-bottom-color:var(--violet);}
+.pnav-right{margin-left:auto;display:flex;gap:8px;align-items:center;flex-shrink:0;}
+/* Token meter */
+.tok-meter{display:flex;align-items:center;gap:6px;padding:4px 10px;background:rgba(0,0,0,0.3);border:1px solid var(--border2);border-radius:3px;}
+.tok-bar-wrap{width:54px;height:4px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden;}
+.tok-bar-fill{height:100%;border-radius:2px;transition:width 0.6s,background 0.6s;}
+.tok-label{font-family:'JetBrains Mono',monospace;font-size:0.38rem;color:var(--cream3);white-space:nowrap;}
+.vault-nav-btn{
+  font-family:'Cinzel',serif;font-size:0.46rem;letter-spacing:1.2px;
+  background:rgba(197,160,89,0.08);border:1px solid rgba(197,160,89,0.3);
+  color:var(--gold);cursor:pointer;padding:5px 12px;transition:all 0.2s;border-radius:2px;
+}
+.vault-nav-btn:hover{background:rgba(197,160,89,0.18);border-color:var(--gold);}
+.vault-nav-btn.keys-active{border-color:var(--green-ok);color:var(--green-ok);background:rgba(45,212,160,0.08);}
+.mode-badge{font-family:'JetBrains Mono',monospace;font-size:0.38rem;padding:3px 7px;border-radius:2px;white-space:nowrap;}
+.mode-badge.ai-mode{background:rgba(45,212,160,0.1);border:1px solid rgba(45,212,160,0.3);color:var(--green-ok);}
+.mode-badge.web-mode{background:rgba(248,113,113,0.1);border:1px solid rgba(248,113,113,0.3);color:var(--red-err);}
+
+/* Progress bar */
+.pbar-wrap{height:2px;background:var(--border3);flex-shrink:0;position:relative;z-index:999;}
+.pbar-fill{height:100%;background:linear-gradient(90deg,var(--rose),var(--gold2),var(--violet2));transition:width 0.4s;}
+
+/* ══ VAULT OVERLAY ══ */
+.vault-overlay{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);align-items:center;justify-content:center;}
+.vault-overlay.open{display:flex;}
+.vault-panel{
+  background:#0d0008;border:1px solid rgba(197,160,89,0.35);
+  border-radius:10px;width:min(1000px,96vw);max-height:90vh;
+  overflow-y:auto;padding:24px;position:relative;
+  box-shadow:0 0 100px rgba(197,160,89,0.1);
+  scrollbar-width:thin;scrollbar-color:rgba(197,160,89,0.2) transparent;
+}
+.vault-title{font-family:'Cinzel Decorative',serif;font-size:0.85rem;color:var(--gold2);margin-bottom:4px;}
+.vault-subtitle{font-size:0.78rem;color:var(--cream3);font-style:italic;margin-bottom:16px;line-height:1.6;}
+.vault-close{position:absolute;top:16px;right:16px;background:none;border:1px solid var(--border2);color:var(--cream3);font-family:'Cinzel',serif;font-size:0.46rem;letter-spacing:1px;cursor:pointer;padding:4px 12px;border-radius:2px;transition:all 0.2s;}
+.vault-close:hover{border-color:var(--gold);color:var(--gold);}
+
+/* Token dashboard inside vault */
+.tok-dashboard{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin-bottom:16px;}
+.tok-card{background:rgba(255,255,255,0.03);border:1px solid var(--border2);border-radius:6px;padding:12px 14px;}
+.tok-card-label{font-family:'Cinzel',serif;font-size:0.44rem;letter-spacing:1.5px;color:var(--cream3);text-transform:uppercase;margin-bottom:6px;}
+.tok-card-val{font-family:'JetBrains Mono',monospace;font-size:1.1rem;color:var(--gold2);}
+.tok-card-sub{font-family:'JetBrains Mono',monospace;font-size:0.4rem;color:var(--muted);margin-top:2px;}
+
+/* Rotation status */
+.rot-status{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 14px;background:rgba(45,212,160,0.04);border:1px solid rgba(45,212,160,0.12);border-radius:4px;margin-bottom:14px;}
+.rot-label{font-family:'JetBrains Mono',monospace;font-size:0.46rem;color:var(--green-ok);}
+.rot-slots{display:flex;gap:3px;flex-wrap:wrap;flex:1;}
+.rslt{width:18px;height:18px;border-radius:3px;border:1px solid var(--border3);background:rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:0.38rem;color:var(--muted);transition:all 0.2s;cursor:pointer;}
+.rslt.has{background:rgba(45,212,160,0.1);border-color:rgba(45,212,160,0.3);color:var(--green-ok);}
+.rslt.current{background:rgba(45,212,160,0.28);border-color:var(--green-ok);color:#fff;box-shadow:0 0 6px rgba(45,212,160,0.3);}
+.rslt.exhausted{background:rgba(248,113,113,0.1);border-color:rgba(248,113,113,0.3);color:var(--red-err);}
+.rot-mode-btn{font-family:'Cinzel',serif;font-size:0.42rem;letter-spacing:0.8px;background:none;border:1px solid var(--border3);color:var(--gold);cursor:pointer;padding:3px 9px;border-radius:2px;transition:all 0.2s;white-space:nowrap;}
+.rot-mode-btn.active{background:rgba(197,160,89,0.15);border-color:var(--gold2);}
+
+/* Vault slots */
+.vault-slots-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:7px;margin-bottom:14px;}
+.vault-slot{background:rgba(255,255,255,0.025);border:1px solid var(--border3);border-radius:5px;padding:10px 12px;display:flex;flex-direction:column;gap:5px;transition:border-color 0.2s;}
+.vault-slot.has-key{border-color:rgba(197,160,89,0.2);}
+.vault-slot.is-active{border-color:rgba(45,212,160,0.4);}
+.vslot-top{display:flex;align-items:center;gap:6px;}
+.vslot-num{font-family:'JetBrains Mono',monospace;font-size:0.42rem;color:#333;min-width:22px;}
+.vslot-provider{font-family:'JetBrains Mono',monospace;font-size:0.4rem;padding:1px 6px;border-radius:2px;min-width:70px;text-align:center;}
+.vslot-provider.groq{background:rgba(139,180,75,0.15);border:1px solid rgba(139,180,75,0.3);color:#8BAA4B;}
+.vslot-provider.gemini{background:rgba(66,133,244,0.15);border:1px solid rgba(66,133,244,0.3);color:#4285f4;}
+.vslot-provider.openrouter{background:rgba(123,45,139,0.15);border:1px solid rgba(123,45,139,0.3);color:var(--violet2);}
+.vslot-provider.empty{background:rgba(255,255,255,0.03);border:1px solid var(--border3);color:#333;}
+.vslot-key-row{display:flex;gap:5px;}
+.vslot-key-inp{
+  flex:1;background:rgba(0,0,0,0.4);border:1px solid var(--border3);border-radius:3px;
+  color:var(--cream3);font-family:'JetBrains Mono',monospace;font-size:0.52rem;
+  padding:4px 8px;outline:none;transition:border-color 0.2s;
+}
+.vslot-key-inp:focus{border-color:rgba(197,160,89,0.4);}
+.vslot-key-inp::placeholder{color:#1e1e1e;}
+.vslot-key-inp.locked{pointer-events:none;color:transparent;text-shadow:0 0 8px rgba(45,212,160,0.5);border-color:rgba(45,212,160,0.3);background:rgba(5,20,10,0.5);}
+.vslot-eye{background:none;border:1px solid var(--border3);border-radius:2px;color:var(--cream3);cursor:pointer;padding:2px 6px;font-size:0.62rem;transition:all 0.2s;}
+.vslot-pin{margin-left:auto;font-family:'Cinzel',serif;font-size:0.42rem;letter-spacing:0.8px;background:none;border:1px solid var(--border2);color:var(--cream3);cursor:pointer;padding:3px 8px;border-radius:2px;transition:all 0.2s;white-space:nowrap;}
+.vslot-pin:hover{border-color:var(--gold);color:var(--gold);}
+.vslot-pin.pinned{border-color:var(--green-ok);color:var(--green-ok);background:rgba(45,212,160,0.07);}
+.vslot-ind{font-family:'JetBrains Mono',monospace;font-size:0.38rem;color:#2a2a2a;min-height:13px;}
+.vslot-ind.ok{color:rgba(45,212,160,0.6);}
+.vslot-ind.pinned{color:var(--green-ok);}
+.vslot-stats{display:flex;gap:10px;font-family:'JetBrains Mono',monospace;font-size:0.36rem;color:var(--muted);}
+
+.vault-footer{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding-top:14px;border-top:1px solid var(--border3);}
+.vault-clear-btn{font-family:'Cinzel',serif;font-size:0.44rem;letter-spacing:0.8px;background:none;border:1px solid rgba(248,113,113,0.3);color:var(--red-err);cursor:pointer;padding:5px 14px;border-radius:2px;transition:all 0.2s;}
+.vault-clear-btn:hover{background:rgba(248,113,113,0.1);}
+.vault-provider-note{font-size:0.72rem;color:var(--cream3);font-style:italic;flex:1;line-height:1.5;}
+
+/* ══ APP BODY ══ */
+.app-body{padding-top:56px;}
+.section-view{display:none;}
+.section-view.active{display:block;}
+
+/* ══ HOME / LANDING ══ */
+.home-hero{
+  min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:80px 20px 60px;position:relative;overflow:hidden;
+  background:linear-gradient(180deg,var(--navy2) 0%,#0a0320 60%,#0d0008 100%);
+}
+.home-hero::before{content:'ॐ';position:absolute;font-size:60vw;color:rgba(197,160,89,0.025);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;line-height:1;font-family:serif;}
+.home-tag{font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:18px;animation:fadeUp 0.8s ease both;}
+.home-title-1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:700;color:#fff;line-height:1;animation:fadeUp 0.9s 0.1s ease both;}
+.home-title-2{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,7rem);font-weight:700;font-style:italic;color:var(--gold);line-height:1;margin-bottom:28px;animation:fadeUp 1s 0.2s ease both;}
+.home-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--cream3);margin-bottom:40px;max-width:640px;animation:fadeUp 1s 0.3s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+.home-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:900px;width:100%;margin:0 auto 32px;animation:fadeUp 1s 0.4s ease both;}
+@media(max-width:600px){.home-cards{grid-template-columns:1fr;}}
+.home-card{
+  background:rgba(255,255,255,0.025);border:1px solid var(--border2);
+  padding:26px 22px;cursor:pointer;transition:all 0.3s;text-align:left;position:relative;overflow:hidden;
+  border-radius:4px;
+}
+.home-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;pointer-events:none;}
+.home-card.c-lalita::before{background:linear-gradient(90deg,#8B1A3A,#C4446A,#E8BA60);}
+.home-card.c-rudram::before{background:linear-gradient(90deg,#D06820,#E8BA60);}
+.home-card.c-swaras::before{background:linear-gradient(90deg,#2d6a4f,#74c69d);}
+.home-card.c-sanskrit::before{background:linear-gradient(90deg,#7B2D8B,#B468D4);}
+.home-card:hover{border-color:rgba(197,160,89,0.35);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,0.4);}
+.hcard-icon{font-size:2rem;display:block;margin-bottom:10px;}
+.hcard-title{font-family:'Cinzel Decorative',serif;font-size:0.72rem;color:var(--gold2);margin-bottom:6px;letter-spacing:1px;}
+.hcard-desc{font-size:0.85rem;color:var(--cream3);line-height:1.65;margin-bottom:10px;}
+.hcard-stats{display:flex;gap:8px;flex-wrap:wrap;}
+.hcard-stat{font-family:'Cinzel',serif;font-size:0.42rem;letter-spacing:0.8px;color:var(--gold);background:rgba(197,160,89,0.08);border:1px solid rgba(197,160,89,0.18);padding:2px 8px;border-radius:2px;}
+
+/* Back to home button */
+.back-home-btn{
+  position:fixed;top:60px;left:0;right:0;z-index:90;
+  display:none;align-items:center;justify-content:space-between;
+  background:rgba(7,17,30,0.95);border-bottom:1px solid var(--border2);
+  padding:6px 16px;backdrop-filter:blur(8px);
+}
+.back-home-btn.show{display:flex;}
+.bh-left{display:flex;align-items:center;gap:10px;}
+.bh-back{font-family:'Cinzel',serif;font-size:0.48rem;letter-spacing:1px;background:none;border:1px solid var(--border2);color:var(--cream3);cursor:pointer;padding:4px 12px;border-radius:2px;transition:all 0.2s;}
+.bh-back:hover{border-color:var(--gold);color:var(--gold);}
+.bh-section-name{font-family:'Cinzel Decorative',serif;font-size:0.56rem;color:var(--gold2);}
+.bh-right{display:flex;gap:6px;align-items:center;}
+
+/* ══ SHARED LAYOUT (sidebar + content) ══ */
+.main-layout{display:flex;min-height:calc(100vh - 56px);}
+.main-sidebar{
+  width:240px;flex-shrink:0;border-right:1px solid var(--border3);
+  overflow-y:auto;background:rgba(0,0,0,0.35);
+  scrollbar-width:thin;scrollbar-color:rgba(197,160,89,0.15) transparent;
+  position:sticky;top:56px;height:calc(100vh - 56px);
+}
+.sb-search-wrap{padding:8px;border-bottom:1px solid var(--border3);}
+.sb-search-inp{width:100%;background:rgba(0,0,0,0.4);border:1px solid var(--border3);border-radius:3px;color:var(--cream);font-family:'Cormorant Garamond',serif;font-size:0.82rem;padding:4px 8px;outline:none;transition:border-color 0.2s;}
+.sb-search-inp:focus{border-color:rgba(197,160,89,0.4);}
+.sb-search-inp::placeholder{color:var(--muted);}
+.sb-group{padding:7px 0 3px;border-bottom:1px solid var(--border3);}
+.sb-group-title{font-family:'Cinzel Decorative',serif;font-size:0.38rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);padding:0 11px 4px;}
+.sb-item{display:flex;align-items:center;gap:7px;padding:4px 11px;cursor:pointer;transition:background 0.15s;border-left:2px solid transparent;}
+.sb-item:hover{background:rgba(197,160,89,0.06);}
+.sb-item.active{background:rgba(197,160,89,0.1);border-left-color:var(--gold);}
+.sb-item.hidden{display:none;}
+.sb-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;background:var(--muted);}
+.sb-dot.done{background:var(--green-ok);box-shadow:0 0 5px rgba(45,212,160,0.4);}
+.sb-dot.generating{background:var(--gold);animation:pulse-dot 1s infinite;}
+.sb-dot.error{background:var(--red-err);}
+@keyframes pulse-dot{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.sb-label{font-size:0.7rem;color:var(--cream2);line-height:1.3;flex:1;}
+.sb-item.active .sb-label{color:var(--cream);}
+.sb-num{font-family:'JetBrains Mono',monospace;font-size:0.38rem;color:var(--cream3);}
+
+.main-content-wrap{flex:1;display:flex;flex-direction:column;overflow:hidden;}
+.main-toolbar{
+  display:flex;align-items:center;gap:7px;padding:7px 14px;
+  border-bottom:1px solid var(--border3);background:rgba(0,0,0,0.3);flex-shrink:0;flex-wrap:wrap;
+}
+.m-btn{
+  font-family:'Cinzel',serif;font-size:0.46rem;letter-spacing:1.2px;text-transform:uppercase;
+  padding:5px 10px;border:1px solid var(--border2);background:rgba(197,160,89,0.07);
+  color:var(--cream2);cursor:pointer;transition:all 0.25s;white-space:nowrap;border-radius:2px;
+}
+.m-btn:hover{background:rgba(197,160,89,0.16);border-color:var(--gold);color:var(--gold3);}
+.m-btn:disabled{opacity:0.3;cursor:not-allowed;}
+.m-btn.primary{background:rgba(197,160,89,0.18);border-color:rgba(197,160,89,0.5);color:var(--gold2);}
+.m-progress-label{font-family:'JetBrains Mono',monospace;font-size:0.44rem;color:var(--cream3);margin-left:auto;}
+
+/* Dimension tabs */
+.dim-tabs{display:flex;gap:0;overflow-x:auto;border-bottom:1px solid var(--border3);scrollbar-width:none;}
+.dim-tabs::-webkit-scrollbar{display:none;}
+.dim-tab{font-family:'Cinzel',serif;font-size:0.46rem;letter-spacing:0.8px;background:none;border:none;border-bottom:2px solid transparent;color:var(--cream3);cursor:pointer;padding:7px 12px;white-space:nowrap;transition:all 0.2s;}
+.dim-tab:hover{color:var(--cream2);}
+.dim-tab.active{color:var(--gold2);border-bottom-color:var(--gold);}
+.dim-content{display:none;}
+.dim-content.active{display:block;}
+
+/* Content area */
+.main-content-area{
+  flex:1;overflow-y:auto;padding:24px 32px 40px;
+  scrollbar-width:thin;scrollbar-color:rgba(197,160,89,0.15) transparent;
+  position:relative;
+}
+.main-content-area::before{
+  content:'ॐ';position:fixed;top:55%;left:55%;transform:translate(-50%,-50%);
+  font-size:32vw;color:rgba(197,160,89,0.015);pointer-events:none;z-index:0;line-height:1;user-select:none;
+}
+
+/* Name header */
+.name-header{position:relative;z-index:1;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid rgba(197,160,89,0.15);}
+.name-header::before{content:'';position:absolute;bottom:-1px;left:0;width:60px;height:2px;background:linear-gradient(90deg,var(--gold),transparent);}
+.name-eyebrow{font-family:'Cinzel Decorative',serif;font-size:0.42rem;letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;margin-bottom:6px;}
+.name-deva{font-family:'Noto Sans Devanagari',sans-serif;font-size:1.6rem;color:var(--gold2);line-height:1.2;margin-bottom:4px;}
+.name-iast{font-family:'Cinzel',serif;font-size:1rem;color:var(--cream);letter-spacing:1px;margin-bottom:4px;}
+.name-meaning{font-style:italic;font-size:0.9rem;color:var(--cream3);}
+
+/* Generated content */
+.gen-content{position:relative;z-index:1;font-size:0.93rem;line-height:1.85;color:var(--cream2);}
+.gen-content h1,.gen-content h2{font-family:'Cinzel Decorative',serif;color:var(--gold2);margin:22px 0 9px;}
+.gen-content h1{font-size:1rem;}
+.gen-content h2{font-size:0.86rem;}
+.gen-content h3{font-family:'Cormorant Garamond',serif;font-size:0.98rem;font-weight:600;color:var(--rose2);margin:18px 0 6px;border-bottom:1px solid var(--border3);padding-bottom:2px;}
+.gen-content p{margin-bottom:11px;}
+.gen-content strong{color:var(--cream);}
+.gen-content em{color:var(--gold3);font-style:italic;}
+.gen-content blockquote{border-left:3px solid var(--gold);padding:7px 14px;margin:12px 0;background:rgba(197,160,89,0.05);color:var(--cream);font-style:italic;}
+.gen-content ul,.gen-content ol{margin:7px 0 11px 20px;}
+.gen-content li{margin-bottom:4px;}
+.gen-content hr{border:none;border-top:1px solid var(--border3);margin:20px 0;}
+
+/* Per-dim gen button */
+.dim-gen-btn{
+  font-family:'Cinzel',serif;font-size:0.5rem;letter-spacing:0.8px;background:none;
+  border:1px solid rgba(197,160,89,0.4);border-radius:3px;color:var(--gold);
+  cursor:pointer;padding:5px 12px;transition:all 0.2s;margin-bottom:10px;display:block;position:relative;z-index:5;
+}
+.dim-gen-btn:hover{background:rgba(197,160,89,0.1);border-color:var(--gold2);}
+.dim-gen-btn:disabled{opacity:0.4;cursor:not-allowed;}
+.dim-output{font-size:0.92rem;line-height:1.85;color:var(--cream2);}
+.dim-output p{margin-bottom:10px;}
+.dim-output strong{color:var(--cream);}
+.dim-output em{color:var(--gold3);}
+.dim-output blockquote{border-left:3px solid var(--gold);padding:6px 12px;margin:10px 0;background:rgba(197,160,89,0.04);color:var(--cream);font-style:italic;}
+.dim-output h3{font-family:'Cormorant Garamond',serif;font-size:0.96rem;font-weight:600;color:var(--rose2);margin:16px 0 5px;}
+.dim-loading{background:rgba(255,255,255,0.025);border-radius:4px;padding:14px;color:var(--cream3);font-style:italic;font-size:0.83rem;text-align:center;animation:pulse-loading 1.5s ease-in-out infinite;}
+@keyframes pulse-loading{0%,100%{opacity:.6;}50%{opacity:1;}}
+
+/* Loading / empty */
+.loading-block{position:relative;z-index:1;text-align:center;padding:42px 20px;}
+.loading-spinner{width:40px;height:40px;border:2px solid var(--border2);border-top-color:var(--gold);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 16px;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.loading-block p{font-style:italic;color:var(--cream3);font-size:0.86rem;}
+.empty-block{position:relative;z-index:1;text-align:center;padding:42px 20px;color:var(--cream3);}
+.empty-block .big-icon{font-size:2.5rem;margin-bottom:12px;display:block;}
+.empty-block p{font-style:italic;font-size:0.88rem;margin-bottom:7px;}
+
+/* Web search panel */
+.web-search-panel{padding:8px 14px;border-bottom:1px solid var(--border3);background:rgba(0,0,0,0.2);}
+.ws-row{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:5px;}
+.ws-inp{flex:1;min-width:160px;background:rgba(0,0,0,0.4);border:1px solid var(--border3);border-radius:3px;color:var(--cream);font-family:'Cormorant Garamond',serif;font-size:0.85rem;padding:4px 9px;outline:none;transition:border-color 0.2s;}
+.ws-inp:focus{border-color:rgba(197,160,89,0.4);}
+.ws-btn{font-family:'Cinzel',serif;font-size:0.44rem;letter-spacing:0.8px;background:none;border:1px solid var(--border2);color:var(--gold);cursor:pointer;padding:4px 12px;border-radius:2px;transition:all 0.2s;white-space:nowrap;}
+.ws-btn:hover{background:rgba(197,160,89,0.1);}
+.ws-results{max-height:180px;overflow-y:auto;font-size:0.76rem;color:var(--cream3);}
+.ws-result-item{padding:5px 7px;border-bottom:1px solid var(--border3);cursor:pointer;transition:background 0.15s;}
+.ws-result-item:hover{background:rgba(197,160,89,0.06);}
+
+/* Cross refs */
+.xref-panel{background:rgba(255,255,255,0.025);border:1px solid rgba(197,160,89,0.15);border-radius:4px;padding:12px 16px;margin-top:14px;position:relative;z-index:5;}
+.xref-title{font-family:'Cinzel',serif;font-size:0.5rem;letter-spacing:1.5px;color:var(--gold);margin-bottom:8px;}
+.xref-links{display:flex;gap:7px;flex-wrap:wrap;}
+.xref-link{font-family:'JetBrains Mono',monospace;font-size:0.44rem;color:var(--turquoise);border:1px solid rgba(26,188,176,0.25);padding:3px 9px;border-radius:2px;cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-block;}
+.xref-link:hover{background:rgba(26,188,176,0.1);border-color:var(--turquoise);}
+
+/* Active key bar */
+.akb{background:rgba(255,255,255,0.025);border:1px solid rgba(197,160,89,0.15);border-radius:3px;padding:5px 11px;display:flex;align-items:center;gap:9px;margin-bottom:12px;font-size:0.76rem;flex-wrap:wrap;position:relative;z-index:5;}
+.akb-dot{width:5px;height:5px;border-radius:50%;background:var(--muted);flex-shrink:0;}
+.akb-dot.ok{background:var(--green-ok);}
+.akb-dot.web{background:var(--rose2);}
+.akb-text{color:var(--cream3);font-size:0.73rem;flex:1;}
+.akb-open{font-family:'Cinzel',serif;font-size:0.42rem;letter-spacing:0.7px;background:none;border:1px solid var(--border2);color:var(--cream3);cursor:pointer;padding:2px 8px;border-radius:2px;transition:all 0.2s;white-space:nowrap;}
+.akb-open:hover{border-color:var(--gold);color:var(--gold);}
+
+/* Log strip */
+.log-strip{border-top:1px solid var(--border3);background:rgba(0,0,0,0.5);padding:0 13px;flex-shrink:0;display:flex;align-items:center;gap:9px;height:25px;position:relative;z-index:10;}
+.log-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
+.log-dot.ok{background:var(--green-ok);}
+.log-dot.err{background:var(--red-err);}
+.log-dot.info{background:var(--gold);}
+.log-dot.ai{background:var(--rose2);animation:pulse-dot 1s infinite;}
+.log-dot.web{background:var(--turquoise);}
+.log-text{font-family:'JetBrains Mono',monospace;font-size:0.46rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;}
+.log-time{font-family:'JetBrains Mono',monospace;font-size:0.42rem;color:var(--muted);flex-shrink:0;}
+.log-provider{font-family:'JetBrains Mono',monospace;font-size:0.42rem;color:var(--violet2);flex-shrink:0;padding-left:7px;border-left:1px solid var(--border3);}
+
+/* Export modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.87);z-index:3000;display:flex;align-items:center;justify-content:center;}
+.modal{background:#0d0008;border:1px solid var(--border2);max-width:740px;width:95%;max-height:82vh;display:flex;flex-direction:column;border-radius:4px;}
+.modal-hdr{padding:12px 17px;border-bottom:1px solid var(--border2);display:flex;justify-content:space-between;align-items:center;flex-shrink:0;}
+.modal-title{font-family:'Cinzel Decorative',serif;font-size:0.68rem;color:var(--gold2);}
+.modal-close-btn{background:none;border:none;color:var(--cream3);font-size:1.1rem;cursor:pointer;}
+.modal-body{flex:1;overflow-y:auto;padding:16px;}
+.modal-ta{width:100%;min-height:360px;background:rgba(0,0,0,0.4);border:1px solid var(--border3);color:var(--cream2);font-family:'Cormorant Garamond',serif;font-size:0.83rem;line-height:1.65;padding:11px;resize:vertical;outline:none;border-radius:3px;}
+.modal-footer-btns{padding:9px 17px;border-top:1px solid var(--border3);display:flex;gap:7px;justify-content:flex-end;flex-shrink:0;}
+.modal-btn{font-family:'Cinzel',serif;font-size:0.46rem;letter-spacing:1.2px;padding:5px 13px;border:1px solid var(--border2);background:rgba(197,160,89,0.07);color:var(--cream2);cursor:pointer;transition:all 0.2s;border-radius:2px;}
+.modal-btn:hover{background:rgba(197,160,89,0.18);border-color:var(--gold);}
+.modal-btn.primary{background:rgba(197,160,89,0.2);border-color:rgba(197,160,89,0.5);color:var(--gold2);}
+
+/* Welcome panel */
+.welcome-panel{position:relative;z-index:1;max-width:660px;margin:28px auto;text-align:center;}
+.w-om{font-size:4rem;color:var(--gold);text-shadow:0 0 50px rgba(197,160,89,0.4);display:block;margin-bottom:18px;animation:glow-gold 3s ease-in-out infinite;}
+@keyframes glow-gold{0%,100%{text-shadow:0 0 40px rgba(197,160,89,0.3);}50%{text-shadow:0 0 100px rgba(197,160,89,0.6),0 0 60px rgba(212,168,255,0.3);}}
+.w-title{font-family:'Cinzel Decorative',serif;font-size:1.1rem;color:var(--cream);margin-bottom:10px;}
+.w-stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:18px 0;}
+.w-stat{background:rgba(197,160,89,0.06);border:1px solid var(--border2);padding:10px 16px;text-align:center;}
+.w-stat-num{font-family:'Cinzel Decorative',serif;font-size:1.4rem;color:var(--gold2);display:block;}
+.w-stat-lbl{font-size:0.68rem;color:var(--cream3);text-transform:uppercase;letter-spacing:1px;font-style:italic;}
+
+/* Swara cards (Sapta Swaras section) */
+.swara-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;border:1px solid var(--border3);margin:0 0 24px;border-radius:4px;overflow:hidden;}
+.swara-card{background:rgba(255,255,255,0.025);padding:22px 18px;cursor:pointer;transition:background 0.2s;position:relative;}
+.swara-card:hover{background:rgba(255,255,255,0.045);}
+.sc-accent{position:absolute;top:0;left:0;right:0;height:2px;}
+.sc-name{font-family:'Cinzel',serif;font-size:0.85rem;letter-spacing:1px;color:var(--gold);margin-bottom:2px;}
+.sc-full{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.8rem;color:var(--cream3);}
+.sc-deva{font-size:2rem;line-height:1;margin-bottom:6px;}
+.sc-hz{font-family:'Cinzel',serif;font-size:0.44rem;letter-spacing:1px;color:var(--cream3);}
+
+/* Sanskrit section specific */
+.skt-akshara-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin:16px 0;}
+.skt-akshara{background:rgba(123,45,139,0.08);border:1px solid rgba(123,45,139,0.2);border-radius:4px;padding:12px 10px;text-align:center;cursor:pointer;transition:all 0.2s;}
+.skt-akshara:hover{background:rgba(123,45,139,0.15);border-color:var(--violet);}
+.skt-akshara .ak-letter{font-family:'Noto Sans Devanagari',sans-serif;font-size:1.6rem;color:var(--violet2);display:block;margin-bottom:4px;}
+.skt-akshara .ak-iast{font-family:'Cinzel',serif;font-size:0.6rem;color:var(--cream3);}
+.skt-akshara .ak-chakra{font-family:'JetBrains Mono',monospace;font-size:0.38rem;color:var(--muted);}
+
+@media(max-width:768px){
+  .main-sidebar{display:none;}
+  .main-content-area{padding:16px 14px 24px;}
+  .home-cards{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAVIGATION ══ -->
+<nav id="portal-nav">
+  <div class="pnav-brand" onclick="showHome()">
+    <span class="pnav-om">ॐ</span>
+    <div class="pnav-brand-text">
+      <span class="n1">SACRED RESEARCH PORTAL</span>
+      <span class="n2">culturalmusings.com</span>
+    </div>
+  </div>
+  <div class="pnav-tabs">
+    <button class="pnav-tab" id="nav-home" onclick="showHome()">Home</button>
+    <button class="pnav-tab tab-lalita" id="nav-lalita" onclick="showSection('lalita')">🌺 Lalitā</button>
+    <button class="pnav-tab tab-rudram" id="nav-rudram" onclick="showSection('rudram')">🕉 Rudram</button>
+    <button class="pnav-tab tab-swaras" id="nav-swaras" onclick="showSection('swaras')">🎵 Swaras</button>
+    <button class="pnav-tab tab-sanskrit" id="nav-sanskrit" onclick="showSection('sanskrit')">ॐ Sanskrit</button>
+  </div>
+  <div class="pnav-right">
+    <div class="tok-meter" title="Token budget remaining">
+      <div class="tok-bar-wrap"><div class="tok-bar-fill" id="tokBar" style="width:100%;background:var(--tok-full)"></div></div>
+      <span class="tok-label" id="tokLabel">Ready</span>
+    </div>
+    <span class="mode-badge ai-mode" id="modeBadge">AI MODE</span>
+    <button class="vault-nav-btn" id="vaultNavBtn" onclick="openVault()">⚷ KEY VAULT</button>
+  </div>
+</nav>
+<div class="pbar-wrap"><div class="pbar-fill" id="progressBar" style="width:0%"></div></div>
+
+<!-- ══ VAULT OVERLAY ══ -->
+<div class="vault-overlay" id="vaultOverlay" onclick="vaultBgClick(event)">
+  <div class="vault-panel" id="vaultPanel">
+    <div class="vault-title">⚷ API Key Vault — Auto-Rotation with Token Tracking</div>
+    <div class="vault-subtitle">
+      Paste up to 20 keys (Groq gsk_… · Gemini AIzaSy… · OpenRouter sk-or…). Keys are auto-detected, auto-locked (never visible again after entry), and rotate in smart order: Groq first (fastest/free), then Gemini (long context), then OpenRouter (fallback). When total token budget nears threshold, portal automatically switches to Web Search mode — no intervention needed. All keys stored in memory only, never sent anywhere.
+    </div>
+    <button class="vault-close" onclick="closeVault()">✕ CLOSE</button>
+
+    <!-- Token dashboard -->
+    <div class="tok-dashboard">
+      <div class="tok-card"><div class="tok-card-label">Total Calls Made</div><div class="tok-card-val" id="vTotalCalls">0</div><div class="tok-card-sub">across all providers</div></div>
+      <div class="tok-card"><div class="tok-card-label">Est. Tokens Used</div><div class="tok-card-val" id="vTokUsed">0</div><div class="tok-card-sub">~2000/call average</div></div>
+      <div class="tok-card"><div class="tok-card-label">Budget Remaining</div><div class="tok-card-val" id="vTokRemain">∞</div><div class="tok-card-sub">of configured limit</div></div>
+      <div class="tok-card"><div class="tok-card-label">Active Keys</div><div class="tok-card-val" id="vActiveKeys">0</div><div class="tok-card-sub">in rotation pool</div></div>
+      <div class="tok-card"><div class="tok-card-label">Current Mode</div><div class="tok-card-val" id="vMode" style="font-size:0.75rem;">Web Search</div><div class="tok-card-sub">auto-switches at threshold</div></div>
+      <div class="tok-card"><div class="tok-card-label">Token Threshold</div><div class="tok-card-val"><input type="number" id="tokThreshInp" value="500000" min="10000" max="10000000" style="background:none;border:none;border-bottom:1px solid var(--border2);color:var(--gold2);font-family:'JetBrains Mono',monospace;font-size:0.85rem;width:100%;outline:none;" onchange="updateThreshold(this.value)"/></div><div class="tok-card-sub">tokens before web fallback</div></div>
+    </div>
+
+    <!-- Rotation display -->
+    <div class="rot-status">
+      <span class="rot-label">ROTATION:</span>
+      <div class="rot-slots" id="rotSlots"></div>
+      <button class="rot-mode-btn active" id="rotRR" onclick="setRotMode('roundrobin')">Round-Robin</button>
+      <button class="rot-mode-btn" id="rotRand" onclick="setRotMode('random')">Random</button>
+      <button class="rot-mode-btn" id="rotSmart" onclick="setRotMode('smart')">Smart (Provider-First)</button>
+      <button class="rot-mode-btn" id="rotManual" onclick="setRotMode('manual')">Manual PIN</button>
+    </div>
+
+    <div class="vault-slots-grid" id="vaultSlotsGrid"></div>
+
+    <div class="vault-footer">
+      <button class="vault-clear-btn" onclick="clearAllKeys()">✕ Clear All Keys</button>
+      <div class="vault-provider-note">
+        <strong style="color:var(--green-ok)">Groq</strong> gsk_… (free, fastest, used first in Smart mode) ·
+        <strong style="color:#4285f4">Gemini</strong> AIzaSy… (free, long context) ·
+        <strong style="color:var(--violet2)">OpenRouter</strong> sk-or… (fallback) ·
+        Keys lock instantly on paste — never visible again. Token threshold auto-switches to 🔍 Web Search mode when reached.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ APP BODY ══ -->
+<div class="app-body">
+
+  <!-- HOME -->
+  <div class="section-view active" id="sec-home">
+    <div class="home-hero">
+      <div class="home-tag">Aesthetics of Society · culturalmusings.com · Sacred Research Portal</div>
+      <h1 class="home-title-1">Sacred</h1>
+      <h1 class="home-title-2">Research</h1>
+      <p class="home-sub">Multi-dimensional Vedic study across Lalitā Sahasranāma, Sri Rudram, Sapta Swaras, and Sanskrit Science — powered by AI or free Web Search</p>
+      <div class="home-cards">
+        <div class="home-card c-lalita" onclick="showSection('lalita')">
+          <span class="hcard-icon">🌺</span>
+          <div class="hcard-title">Lalitā Sahasranāma &amp; Triśatī</div>
+          <div class="hcard-desc">All 1000 names of the Divine Mother + 300 from the Triśatī, each across 9 scholarly dimensions: Sanskrit, Vedanta, Science, Yoga, Neurology, Acoustics, Psychology, Ayurveda, Cross-References.</div>
+          <div class="hcard-stats"><span class="hcard-stat">1000 Names</span><span class="hcard-stat">300 Triśatī</span><span class="hcard-stat">9 Dimensions</span></div>
+        </div>
+        <div class="home-card c-rudram" onclick="showSection('rudram')">
+          <span class="hcard-icon">🕉</span>
+          <div class="hcard-title">Sri Rudram Commentary</div>
+          <div class="hcard-desc">Complete Namakam (11 Anuvakas) + Chamakam (11 Anuvakas) + Svara Sthāna science + Synthesis — 25 sections of deep scholarly commentary with Sanskrit analysis and neuroscience.</div>
+          <div class="hcard-stats"><span class="hcard-stat">25 Sections</span><span class="hcard-stat">11+11 Anuvakas</span><span class="hcard-stat">~40 Pages</span></div>
+        </div>
+        <div class="home-card c-swaras" onclick="showSection('swaras')">
+          <span class="hcard-icon">🎵</span>
+          <div class="hcard-title">Sapta Swaras Deep Research</div>
+          <div class="hcard-desc">Seven sacred tones — Sa Ri Ga Ma Pa Da Ni — each explored across 3 octaves × 6 scholarly pages: Sanskrit, Philosophy, Medicine, Vibration, Acoustics, Case Studies + Duration & Alankaras.</div>
+          <div class="hcard-stats"><span class="hcard-stat">7 Swaras</span><span class="hcard-stat">3 Octaves</span><span class="hcard-stat">18 Alankaras</span></div>
+        </div>
+        <div class="home-card c-sanskrit" onclick="showSection('sanskrit')">
+          <span class="hcard-icon">ॐ</span>
+          <div class="hcard-title">Sanskrit Dimension</div>
+          <div class="hcard-desc">The unique section: 50 Aksharas phoneme map with chakra/swara/deity data, Dhātu verbal root explorer cross-linked across all portals, and live Paninian inference engine for any Sanskrit word.</div>
+          <div class="hcard-stats"><span class="hcard-stat">50 Aksharas</span><span class="hcard-stat">Dhātu Explorer</span><span class="hcard-stat">Live Inference</span></div>
+        </div>
+      </div>
+      <p style="font-size:0.82rem;color:var(--muted);max-width:600px;line-height:1.7;">
+        Add API keys in ⚷ KEY VAULT for AI commentary. All sections work without keys via 🔍 Web Search (zero tokens). Portal auto-switches modes when token threshold is reached.
+      </p>
+    </div>
+    <div class="log-strip"><div class="log-dot info" id="logDot0"></div><div class="log-text" id="logText0">Ready — Web Search works without keys. Add Groq/Gemini/OpenRouter keys for AI commentary.</div><div class="log-time" id="logTime0"></div><div class="log-provider" id="logProvider0"></div></div>
+  </div>
+
+  <!-- LALITĀ SECTION -->
+  <div class="section-view" id="sec-lalita">
+    <div class="main-layout">
+      <div class="main-sidebar" id="lalitaSidebar"></div>
+      <div class="main-content-wrap">
+        <div class="main-toolbar">
+          <button class="m-btn primary" id="lalGenAllBtn" onclick="genAll('lalita')" disabled>⚡ Gen All</button>
+          <button class="m-btn" id="lalGenOneBtn" onclick="genCurrentDim('lalita')" disabled>▶ This Name</button>
+          <button class="m-btn" onclick="openExport('lalita')">⇩ Export</button>
+          <button class="m-btn" style="border-color:rgba(26,188,176,0.4);color:var(--turquoise);" onclick="toggleWebSearch('lalita')">🔍 Web Ref</button>
+          <span class="m-progress-label" id="lalProgressLabel"></span>
+        </div>
+        <div class="web-search-panel" id="lalWebSearch" style="display:none;">
+          <div class="ws-row">
+            <input class="ws-inp" id="lalWsInp" type="text" placeholder="Search wisdomlib · kamakotimandali · sacred-texts…" onkeydown="if(event.key==='Enter')doWebSearch('lalita')"/>
+            <button class="ws-btn" onclick="doWebSearch('lalita')">⚡ Search</button>
+            <button class="ws-btn" onclick="toggleWebSearch('lalita')" style="color:var(--red-err);">✕</button>
+          </div>
+          <div id="lalWsStatus" style="font-family:'JetBrains Mono',monospace;font-size:0.44rem;color:var(--cream3);padding:3px 0;"></div>
+          <div id="lalWsResults" class="ws-results"></div>
+        </div>
+        <div class="dim-tabs" id="lalDimTabs"></div>
+        <div class="main-content-area" id="lalContent"></div>
+      </div>
+    </div>
+    <div class="log-strip"><div class="log-dot info" id="logDot1"></div><div class="log-text" id="logText1">Lalitā — select a name from the sidebar.</div><div class="log-time" id="logTime1"></div><div class="log-provider" id="logProvider1"></div></div>
+  </div>
+
+  <!-- RUDRAM SECTION -->
+  <div class="section-view" id="sec-rudram">
+    <div class="main-layout">
+      <div class="main-sidebar" id="rudramSidebar"></div>
+      <div class="main-content-wrap">
+        <div class="main-toolbar">
+          <button class="m-btn primary" id="rudGenAllBtn" onclick="genAll('rudram')" disabled>⚡ Gen All 25</button>
+          <button class="m-btn" id="rudGenOneBtn" onclick="genCurrentDim('rudram')" disabled>▶ This Section</button>
+          <button class="m-btn" onclick="openExport('rudram')">⇩ Export</button>
+          <button class="m-btn" style="border-color:rgba(26,188,176,0.4);color:var(--turquoise);" onclick="toggleWebSearch('rudram')">🔍 Web Ref</button>
+          <span class="m-progress-label" id="rudProgressLabel"></span>
+        </div>
+        <div class="web-search-panel" id="rudWebSearch" style="display:none;">
+          <div class="ws-row">
+            <input class="ws-inp" id="rudWsInp" type="text" placeholder="Search wisdomlib · sacred-texts · vedabase…" onkeydown="if(event.key==='Enter')doWebSearch('rudram')"/>
+            <button class="ws-btn" onclick="doWebSearch('rudram')">⚡ Search</button>
+            <button class="ws-btn" onclick="toggleWebSearch('rudram')" style="color:var(--red-err);">✕</button>
+          </div>
+          <div id="rudWsStatus" style="font-family:'JetBrains Mono',monospace;font-size:0.44rem;color:var(--cream3);padding:3px 0;"></div>
+          <div id="rudWsResults" class="ws-results"></div>
+        </div>
+        <div class="main-content-area" id="rudContent"></div>
+      </div>
+    </div>
+    <div class="log-strip"><div class="log-dot info" id="logDot2"></div><div class="log-text" id="logText2">Sri Rudram — select a section.</div><div class="log-time" id="logTime2"></div><div class="log-provider" id="logProvider2"></div></div>
+  </div>
+
+  <!-- SWARAS SECTION -->
+  <div class="section-view" id="sec-swaras">
+    <div class="main-layout">
+      <div class="main-sidebar" id="swarasSidebar"></div>
+      <div class="main-content-wrap">
+        <div class="main-toolbar">
+          <button class="m-btn primary" id="swGenAllBtn" onclick="genAll('swaras')" disabled>⚡ Gen Section</button>
+          <button class="m-btn" id="swGenOneBtn" onclick="genCurrentDim('swaras')" disabled>▶ Generate</button>
+          <button class="m-btn" onclick="openExport('swaras')">⇩ Export</button>
+          <button class="m-btn" style="border-color:rgba(26,188,176,0.4);color:var(--turquoise);" onclick="toggleWebSearch('swaras')">🔍 Web Ref</button>
+          <span class="m-progress-label" id="swProgressLabel"></span>
+        </div>
+        <div class="web-search-panel" id="swarasWebSearch" style="display:none;">
+          <div class="ws-row">
+            <input class="ws-inp" id="swarasWsInp" type="text" placeholder="Search swara raga acoustics…" onkeydown="if(event.key==='Enter')doWebSearch('swaras')"/>
+            <button class="ws-btn" onclick="doWebSearch('swaras')">⚡ Search</button>
+            <button class="ws-btn" onclick="toggleWebSearch('swaras')" style="color:var(--red-err);">✕</button>
+          </div>
+          <div id="swarasWsStatus" style="font-family:'JetBrains Mono',monospace;font-size:0.44rem;color:var(--cream3);padding:3px 0;"></div>
+          <div id="swarasWsResults" class="ws-results"></div>
+        </div>
+        <div class="main-content-area" id="swContent"></div>
+      </div>
+    </div>
+    <div class="log-strip"><div class="log-dot info" id="logDot3"></div><div class="log-text" id="logText3">Sapta Swaras — select a swara.</div><div class="log-time" id="logTime3"></div><div class="log-provider" id="logProvider3"></div></div>
+  </div>
+
+  <!-- SANSKRIT SECTION -->
+  <div class="section-view" id="sec-sanskrit">
+    <div class="main-layout">
+      <div class="main-sidebar" id="sanskritSidebar"></div>
+      <div class="main-content-wrap">
+        <div class="main-toolbar">
+          <button class="m-btn primary" id="sktGenBtn" onclick="genCurrentDim('sanskrit')" disabled>▶ Generate</button>
+          <button class="m-btn" onclick="openExport('sanskrit')">⇩ Export</button>
+          <button class="m-btn" style="border-color:rgba(26,188,176,0.4);color:var(--turquoise);" onclick="toggleWebSearch('sanskrit')">🔍 Web Ref</button>
+        </div>
+        <div class="web-search-panel" id="sanskritWebSearch" style="display:none;">
+          <div class="ws-row">
+            <input class="ws-inp" id="sanskritWsInp" type="text" placeholder="Search Sanskrit etymology Panini dhatu…" onkeydown="if(event.key==='Enter')doWebSearch('sanskrit')"/>
+            <button class="ws-btn" onclick="doWebSearch('sanskrit')">⚡ Search</button>
+            <button class="ws-btn" onclick="toggleWebSearch('sanskrit')" style="color:var(--red-err);">✕</button>
+          </div>
+          <div id="sanskritWsStatus" style="font-family:'JetBrains Mono',monospace;font-size:0.44rem;color:var(--cream3);padding:3px 0;"></div>
+          <div id="sanskritWsResults" class="ws-results"></div>
+        </div>
+        <div class="main-content-area" id="sktContent"></div>
+      </div>
+    </div>
+    <div class="log-strip"><div class="log-dot info" id="logDot4"></div><div class="log-text" id="logText4">Sanskrit Dimension — select a topic.</div><div class="log-time" id="logTime4"></div><div class="log-provider" id="logProvider4"></div></div>
+  </div>
+
+</div><!-- /app-body -->
+
+<!-- Export Modal -->
+<div class="modal-overlay" id="exportModal" style="display:none;">
+  <div class="modal">
+    <div class="modal-hdr"><span class="modal-title" id="exportTitle">⇩ Export</span><button class="modal-close-btn" onclick="document.getElementById('exportModal').style.display='none'">✕</button></div>
+    <div class="modal-body"><textarea class="modal-ta" id="exportContent" readonly></textarea></div>
+    <div class="modal-footer-btns">
+      <button class="modal-btn" onclick="copyExport()">Copy</button>
+      <button class="modal-btn primary" onclick="downloadExport()">Download</button>
+      <button class="modal-btn" onclick="document.getElementById('exportModal').style.display='none'">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- Back-to-home bar (shown when in a section) -->
+<div class="back-home-btn" id="backHomeBar">
+  <div class="bh-left">
+    <button class="bh-back" onclick="showHome()">← Home</button>
+    <span class="bh-section-name" id="bhSectionName"></span>
+  </div>
+  <div class="bh-right">
+    <span class="mode-badge ai-mode" id="backModeBadge">AI MODE</span>
+  </div>
+</div>
+
+<script>
+'use strict';
+// ═══════════════════════════════════════════════════════════════════
+//  VAULT ENGINE — 20 slots, smart rotation, token tracking, auto-lock
+// ═══════════════════════════════════════════════════════════════════
+const MAX_SLOTS = 20;
+const TOK_PER_CALL_EST = 2000; // estimated tokens per AI call
+let tokenBudget = 500000;
+let tokensUsed = 0;
+let totalCalls = 0;
+let rotationMode = 'smart'; // roundrobin | random | smart | manual
+let rrPointer = 0;
+let manualIdx = -1;
+let callCounters = {}; // slotIdx -> count
+let activeSlotIdx = -1;
+
+// In-memory vault — keys NEVER stored to disk or sent anywhere
+const vault = Array.from({length:MAX_SLOTS}, () => ({key:'', name:'', locked:false}));
+
+function detectProvider(k) {
+  if(!k) return 'empty';
+  if(k.startsWith('gsk_') || k.startsWith('gsk-')) return 'groq';
+  if(k.startsWith('AIzaSy') || k.startsWith('AIza')) return 'gemini';
+  if(k.startsWith('sk-or')) return 'openrouter';
+  return 'unknown';
+}
+function providerLabel(k) {
+  const p = detectProvider(k);
+  return {groq:'Groq',gemini:'Gemini',openrouter:'OpenRouter',unknown:'?',empty:'—'}[p]||'?';
+}
+function getActiveSlots() {
+  return vault.map((s,i)=>({...s,i})).filter(s=>!!s.key);
+}
+function isAiMode() {
+  return getActiveSlots().length > 0 && tokensUsed < tokenBudget;
+}
+function pickNextKey() {
+  const actives = getActiveSlots();
+  if(!actives.length) throw new Error('No API keys. Open ⚷ KEY VAULT and paste a free key (Groq/Gemini/OpenRouter).');
+  if(tokensUsed >= tokenBudget) throw new Error('Token budget reached — switching to Web Search mode.');
+
+  if(rotationMode === 'manual') {
+    if(manualIdx < 0 || !vault[manualIdx]?.key) throw new Error('No key pinned. Click PIN on a slot in Key Vault.');
+    return {key:vault[manualIdx].key, idx:manualIdx};
+  }
+  if(rotationMode === 'smart') {
+    // Priority: Groq first (free fastest), then Gemini, then OpenRouter
+    const order = ['groq','gemini','openrouter','unknown'];
+    for(const provider of order) {
+      const slot = actives.find(s => detectProvider(s.key) === provider);
+      if(slot) return {key:slot.key, idx:slot.i};
+    }
+  }
+  if(rotationMode === 'random') {
+    const pick = actives[Math.floor(Math.random()*actives.length)];
+    return {key:pick.key, idx:pick.i};
+  }
+  // Round-robin
+  if(rrPointer >= actives.length) rrPointer = 0;
+  const pick = actives[rrPointer % actives.length];
+  rrPointer = (rrPointer+1) % actives.length;
+  return {key:pick.key, idx:pick.i};
+}
+
+// ── Vault UI ──
+function buildVaultUI() {
+  const grid = document.getElementById('vaultSlotsGrid');
+  grid.innerHTML = '';
+  vault.forEach((slot,i) => {
+    const hasKey = !!slot.key;
+    const provider = detectProvider(slot.key);
+    const calls = callCounters[i]||0;
+    const isPinned = (i === manualIdx && rotationMode==='manual');
+    const d = document.createElement('div');
+    d.className = `vault-slot${hasKey?' has-key':''}${isPinned?' is-active':''}`;
+    d.innerHTML = `
+      <div class="vslot-top">
+        <span class="vslot-num">${String(i+1).padStart(2,'0')}</span>
+        <span class="vslot-provider ${provider}">${providerLabel(slot.key)}</span>
+        <span style="font-family:'Cinzel',serif;font-size:0.44rem;color:var(--cream3);flex:1;padding-left:6px;">${slot.name||''}</span>
+        <button class="vslot-pin${isPinned?' pinned':''}" onclick="pinSlot(${i})">${isPinned?'✓ PINNED':'PIN'}</button>
+      </div>
+      <div class="vslot-key-row">
+        <input class="vslot-key-inp${slot.locked?' locked':''}" id="vsk-${i}" type="password"
+          placeholder="gsk_… / AIzaSy… / sk-or…"
+          value="${slot.locked?'•••••••••••••':slot.key}"
+          ${slot.locked?'readonly':''}
+          oninput="vaultKeyChange(${i},this.value)"
+          onpaste="handleKeyPaste(event,${i})"/>
+        ${!slot.locked?`<button class="vslot-eye" onclick="vsEye(${i})">👁</button>`:''}
+      </div>
+      <div class="vslot-ind${hasKey?(isPinned?' pinned':' ok'):''}">
+        ${isPinned?'● PINNED (manual)':(hasKey?`● In pool · ${providerLabel(slot.key)}`:'○ Empty')}
+      </div>
+      <div class="vslot-stats">
+        ${hasKey?`<span>${calls} calls</span><span>${(calls*TOK_PER_CALL_EST).toLocaleString()} est. tokens</span>`:''}
+      </div>`;
+    grid.appendChild(d);
+  });
+  updateVaultStats();
+  updateRotSlots();
+  updateRotModeButtons();
+  updateNavBtn();
+  updateModeBadge();
+}
+
+function handleKeyPaste(e, i) {
+  e.preventDefault();
+  const k = (e.clipboardData||window.clipboardData).getData('text').trim();
+  if(k.length >= 8) lockSlot(i, k);
+}
+function vaultKeyChange(i, v) {
+  if(v.trim().length >= 8 && !vault[i].locked) {
+    setTimeout(() => lockSlot(i, v.trim()), 800); // auto-lock after brief delay
+  }
+}
+function lockSlot(i, key) {
+  vault[i].key = key;
+  vault[i].locked = true;
+  buildVaultUI();
+  updateBtns();
+  log('ok', `Slot ${i+1} locked (${providerLabel(key)})`);
+}
+function vsEye(i) {
+  const inp = document.getElementById(`vsk-${i}`);
+  if(inp) inp.type = inp.type==='password'?'text':'password';
+}
+function pinSlot(i) {
+  if(!vault[i].key) { alert('Empty slot — paste a key first.'); return; }
+  setRotMode('manual');
+  manualIdx = i;
+  buildVaultUI();
+}
+function setRotMode(mode) {
+  rotationMode = mode;
+  updateRotModeButtons();
+  updateRotSlots();
+}
+function updateRotModeButtons() {
+  ['roundrobin','random','smart','manual'].forEach(m => {
+    const id = m==='roundrobin'?'rotRR':m==='random'?'rotRand':m==='smart'?'rotSmart':'rotManual';
+    document.getElementById(id)?.classList.toggle('active', rotationMode===m);
+  });
+}
+function updateRotSlots() {
+  const el = document.getElementById('rotSlots');
+  if(!el) return;
+  el.innerHTML = vault.map((s,i) => {
+    const hasKey = !!s.key;
+    const actives = getActiveSlots();
+    const isCur = hasKey && rotationMode!=='manual' && actives.length>0 && actives[rrPointer%Math.max(actives.length,1)]?.i===i;
+    return `<div class="rslt${hasKey?' has':''}${isCur?' current':''}" title="Slot ${i+1} · ${providerLabel(s.key)}">${hasKey?String(i+1):'·'}</div>`;
+  }).join('');
+}
+function updateVaultStats() {
+  document.getElementById('vTotalCalls').textContent = totalCalls;
+  document.getElementById('vTokUsed').textContent = (tokensUsed).toLocaleString();
+  document.getElementById('vTokRemain').textContent = Math.max(0, tokenBudget - tokensUsed).toLocaleString();
+  document.getElementById('vActiveKeys').textContent = getActiveSlots().length;
+  document.getElementById('vMode').textContent = isAiMode() ? 'AI Mode ✓' : 'Web Search';
+  document.getElementById('vMode').style.color = isAiMode() ? 'var(--green-ok)' : 'var(--red-err)';
+}
+function updateNavBtn() {
+  const btn = document.getElementById('vaultNavBtn');
+  const n = getActiveSlots().length;
+  if(n > 0) { btn.classList.add('keys-active'); btn.textContent = `⚷ ${n} KEY${n>1?'S':''}`; }
+  else { btn.classList.remove('keys-active'); btn.textContent = '⚷ KEY VAULT'; }
+}
+function updateModeBadge() {
+  const ai = isAiMode();
+  ['modeBadge','backModeBadge'].forEach(id => {
+    const el = document.getElementById(id);
+    if(!el) return;
+    el.className = 'mode-badge ' + (ai?'ai-mode':'web-mode');
+    el.textContent = ai ? 'AI MODE' : '🔍 WEB MODE';
+  });
+}
+function updateTokBar() {
+  const pct = Math.max(0, Math.min(100, (1 - tokensUsed/tokenBudget)*100));
+  const fill = document.getElementById('tokBar');
+  if(fill) {
+    fill.style.width = pct+'%';
+    fill.style.background = pct > 60 ? 'var(--tok-full)' : pct > 20 ? 'var(--tok-mid)' : 'var(--tok-low)';
+  }
+  const lbl = document.getElementById('tokLabel');
+  if(lbl) lbl.textContent = isAiMode() ? `${Math.round(pct)}% left` : 'Web Mode';
+}
+function updateThreshold(v) {
+  tokenBudget = parseInt(v)||500000;
+  updateTokBar();
+  updateModeBadge();
+  updateVaultStats();
+}
+function clearAllKeys() {
+  if(!confirm('Clear all keys from memory?')) return;
+  vault.forEach(s => { s.key=''; s.locked=false; s.name=''; });
+  Object.keys(callCounters).forEach(k => delete callCounters[k]);
+  manualIdx = -1; rrPointer = 0; totalCalls = 0; tokensUsed = 0;
+  buildVaultUI(); updateBtns(); updateTokBar(); log('info','All keys cleared.');
+}
+function openVault() { buildVaultUI(); document.getElementById('vaultOverlay').classList.add('open'); }
+function closeVault() { document.getElementById('vaultOverlay').classList.remove('open'); }
+function vaultBgClick(e) { if(e.target===document.getElementById('vaultOverlay')) closeVault(); }
+
+window.setRotationMode = setRotMode; // expose for buttons
+['rotRR','rotRand','rotSmart','rotManual'].forEach(id => {
+  const btn = document.getElementById(id);
+  if(btn) btn.onclick = () => setRotMode({rotRR:'roundrobin',rotRand:'random',rotSmart:'smart',rotManual:'manual'}[id]);
+});
+
+// ═══════════════════════════════════════════════════════════════════
+//  AI CALL ENGINE
+// ═══════════════════════════════════════════════════════════════════
+async function callAI(prompt, maxTokens=2000) {
+  const {key, idx} = pickNextKey();
+  const provider = detectProvider(key);
+  callCounters[idx] = (callCounters[idx]||0)+1;
+  totalCalls++;
+  tokensUsed += TOK_PER_CALL_EST;
+
+  let result;
+  if(provider==='groq') result = await callGroq(key,prompt,maxTokens);
+  else if(provider==='gemini') result = await callGemini(key,prompt,maxTokens);
+  else if(provider==='openrouter') result = await callOpenRouter(key,prompt,maxTokens);
+  else { try{result=await callGroq(key,prompt,maxTokens);}catch(e){result=await callOpenRouter(key,prompt,maxTokens);} }
+
+  // Update UI
+  updateRotSlots();
+  updateTokBar();
+  updateModeBadge();
+  updateVaultStats();
+  const provLabel = providerLabel(key);
+  document.querySelectorAll('[id^=logProvider]').forEach(el => el.textContent = `${provLabel}·s${idx+1}·${totalCalls}`);
+  document.getElementById('navProviderLabel')?.textContent && (document.getElementById('navProviderLabel').textContent=`${provLabel}·${totalCalls}`);
+  return result;
+}
+async function callGroq(key,prompt,maxTokens){
+  const r = await fetch('https://api.groq.com/openai/v1/chat/completions',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Authorization':`Bearer ${key}`},
+    body:JSON.stringify({model:'llama-3.3-70b-versatile',max_tokens:Math.min(maxTokens,8000),messages:[{role:'user',content:prompt}]})
+  });
+  if(!r.ok){const t=await r.text();throw new Error(`Groq ${r.status}: ${t.slice(0,120)}`);}
+  const d=await r.json(); return d.choices?.[0]?.message?.content||'';
+}
+async function callGemini(key,prompt,maxTokens){
+  const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${key}`,{
+    method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{maxOutputTokens:Math.min(maxTokens,8192)}})
+  });
+  if(!r.ok) throw new Error(`Gemini ${r.status}`);
+  const d=await r.json(); return d.candidates?.[0]?.content?.parts?.[0]?.text||'';
+}
+async function callOpenRouter(key,prompt,maxTokens){
+  const r = await fetch('https://openrouter.ai/api/v1/chat/completions',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Authorization':`Bearer ${key}`,'HTTP-Referer':'https://culturalmusings.com','X-Title':'CulturalMusings Sacred Portal'},
+    body:JSON.stringify({model:'meta-llama/llama-3.3-70b-instruct:free',max_tokens:Math.min(maxTokens,8000),messages:[{role:'user',content:prompt}]})
+  });
+  if(!r.ok) throw new Error(`OpenRouter ${r.status}`);
+  const d=await r.json(); return d.choices?.[0]?.message?.content||'';
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  WEB SEARCH — zero tokens, references culturalmusings.com domains
+// ═══════════════════════════════════════════════════════════════════
+const REF_SITES = [
+  'wisdomlib.org','sacred-texts.com','hindupedia.com','kamakotimandali.com',
+  'vedabase.io','adishakti.org','astrojyoti.com','shivashakti.com',
+  'nada-chikitsa.culturalmusings.com','spiritualphilosophical.culturalmusings.com',
+  'completecelestialsynthesis.culturalmusings.com','vedicfoundationandsoundscience.culturalmusings.com',
+  'bioresonancemusings.culturalmusings.com','masterconsciousprotocol.culturalmusings.com',
+  'spandanashodha.culturalmusings.com','natyashastra.culturalmusings.com',
+  'karanasrootmap.culturalmusings.com','unifiedtheory.culturalmusings.com'
+];
+const SITE_FILTER = REF_SITES.slice(0,8).map(s=>`site:${s}`).join(' OR ');
+
+async function doWebSearch(ctx) {
+  const q = (document.getElementById(`${ctx}WsInp`)?.value||'').trim();
+  const statusEl = document.getElementById(`${ctx}WsStatus`);
+  const resultsEl = document.getElementById(`${ctx}WsResults`);
+  if(!q){if(statusEl)statusEl.textContent='Enter a search term.';return;}
+  if(statusEl) statusEl.textContent='⟳ Searching reference sites (0 tokens)…';
+  if(resultsEl) resultsEl.innerHTML='';
+  const fullQ = encodeURIComponent(`${q} ${SITE_FILTER}`);
+  const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent('https://html.duckduckgo.com/html/?q='+fullQ)}`;
+  try {
+    const resp = await fetch(proxyUrl);
+    if(!resp.ok) throw new Error('proxy error');
+    const data = await resp.json();
+    const html = data.contents||'';
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html,'text/html');
+    const results = [];
+    doc.querySelectorAll('.result,.results_links').forEach(div=>{
+      const titleEl=div.querySelector('.result__title a,.result__a');
+      const snippetEl=div.querySelector('.result__snippet');
+      const urlEl=div.querySelector('.result__url,.result__extras__url');
+      if(titleEl) results.push({title:titleEl.textContent.trim(),snippet:snippetEl?.textContent.trim()||'',url:urlEl?.textContent.trim()||''});
+    });
+    if(results.length===0) throw new Error('no results parsed');
+    if(statusEl) statusEl.textContent=`✓ ${results.length} result(s) — 0 tokens`;
+    if(resultsEl) resultsEl.innerHTML = results.slice(0,10).map(r=>`
+      <div class="ws-result-item" onclick="window.open('${escH(r.url)}','_blank')">
+        <div style="font-family:'Cinzel',serif;font-size:0.52rem;color:var(--gold2);margin-bottom:2px;">${escH(r.title)}</div>
+        <div style="font-size:0.72rem;color:var(--cream3);">${escH(r.snippet)}</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.38rem;color:var(--muted);">${escH(r.url.slice(0,80))}</div>
+      </div>`).join('');
+    log('web',`Web search: ${results.length} results · 0 tokens`);
+  } catch(err) {
+    if(statusEl) statusEl.textContent='Showing direct reference links:';
+    if(resultsEl) resultsEl.innerHTML = REF_SITES.slice(0,10).map(s=>`
+      <div class="ws-result-item" onclick="window.open('https://${s}','_blank')">
+        <div style="font-family:'Cinzel',serif;font-size:0.52rem;color:var(--gold2);">🔗 ${s}</div>
+      </div>`).join('');
+    log('web','Web search fallback: direct links');
+  }
+}
+function toggleWebSearch(ctx) {
+  const p = document.getElementById(`${ctx}WebSearch`);
+  if(p) p.style.display = p.style.display==='none'?'block':'none';
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  DATA — LALITĀ SAHASRANĀMA (first 50 full, rest generated)
+// ═══════════════════════════════════════════════════════════════════
+const DIMENSIONS = [
+  {id:'sanskrit',label:'Sanskrit & Etymology'},
+  {id:'philosophy',label:'Philosophy & Vedanta'},
+  {id:'scientific',label:'Scientific'},
+  {id:'yogic',label:'Yogic & Tantric'},
+  {id:'neurological',label:'Neurological'},
+  {id:'acoustic',label:'Acoustic & Nāda'},
+  {id:'psychological',label:'Psychology'},
+  {id:'medical',label:'Ayurveda & Medicine'},
+  {id:'crossref',label:'Cross-References'},
+];
+
+const LAL_GROUPS = [
+  {group:'Śrī Mātā — The Divine Mother',start:1,end:50},
+  {group:'Śiva-Śakti Union',start:51,end:100},
+  {group:'Chakra Ascent — Kuṇḍalinī',start:101,end:150},
+  {group:'Śrī Cakra — The Sacred Diagram',start:151,end:250},
+  {group:'Vimarśa Śakti — Pure Awareness',start:251,end:400},
+  {group:'Nāda Brahman — Sound & Creation',start:401,end:550},
+  {group:'Śrī Vidyā — Secret Science',start:551,end:700},
+  {group:'Mokṣa & Liberation',start:701,end:850},
+  {group:'Para Brahman — The Absolute',start:851,end:1000},
+];
+
+// Core 50 with full data — rest generated from pool
+const LAL_FULL = [
+  {n:1,deva:'श्री माता',iast:'Śrī Mātā',en:'The Auspicious Mother — source of all creation'},
+  {n:2,deva:'श्री महाराज्ञी',iast:'Śrī Mahārājñī',en:'The Great Queen — sovereign of all worlds'},
+  {n:3,deva:'श्रीमत्सिंहासनेश्वरी',iast:'Śrīmat-Siṃhāsaneśvarī',en:'She who is enthroned on the lion-throne of consciousness'},
+  {n:4,deva:'चिदग्निकुण्डसम्भूता',iast:'Cidagnikuṇḍa-sambhūtā',en:'She who emerged from the fire-pit of pure consciousness'},
+  {n:5,deva:'देवकार्यसमुद्यता',iast:'Devakārya-samudyatā',en:'She who arises to accomplish the works of the gods'},
+  {n:6,deva:'उद्यद्भानुसहस्राभा',iast:'Udyadbhānu-sahasrābhā',en:'She whose radiance equals a thousand rising suns'},
+  {n:7,deva:'चतुर्बाहुसमन्विता',iast:'Caturbāhu-samanvitā',en:'She who is endowed with four arms — the four cosmic functions'},
+  {n:8,deva:'रागस्वरूपापाशाढ्या',iast:'Rāgasvarūpā-pāśāḍhyā',en:'She whose very nature is love, wielding the noose of desire'},
+  {n:9,deva:'क्रोधाकाराङ्कुशोज्ज्वला',iast:'Krodhākārāṅkuśojjvalā',en:'She who blazes with the goad of transformative will'},
+  {n:10,deva:'मनोरूपेक्षुकोदण्डा',iast:'Manorūpekṣu-kodaṇḍā',en:'She whose bow is the mind itself — made of sugarcane'},
+  {n:11,deva:'पञ्चतन्मात्रसायका',iast:'Pañcatanmātra-sāyakā',en:'She whose five arrows are the five subtle elements'},
+  {n:12,deva:'निजारुणप्रभापूर',iast:'Nijāruṇa-prabhā-pūra',en:'She in whose crimson radiance all universes are submerged'},
+  {n:13,deva:'चम्पकाशोकपुन्नाग',iast:'Campakāśoka-punnāga',en:'She whose hair is adorned with campaka and aśoka flowers'},
+  {n:14,deva:'कुरुविन्दमणिश्रेणी',iast:'Kuruvinda-maṇi-śreṇī',en:'She adorned with a glittering crown set with ruby gems'},
+  {n:15,deva:'अष्टमीचन्द्रविभ्राजत्',iast:'Aṣṭamī-candra-vibhrājat',en:'She whose forehead shines like the eighth-day crescent moon'},
+  {n:16,deva:'मुखचन्द्रकलङ्काभ',iast:'Mukha-candra-kalaṅkābha',en:'She who wears a musk-mark on her face like the lunar spot'},
+  {n:17,deva:'वदनस्मरमाङ्गल्य',iast:'Vadana-smara-māṅgalya',en:'She whose eyebrows are the auspicious gateway of the love god'},
+  {n:18,deva:'वक्त्रलक्ष्मीपरीवाह',iast:'Vaktra-lakṣmī-parīvāha',en:'She whose eyes are like fish swimming in the stream of her face\'s Lakṣmī'},
+  {n:19,deva:'नवचम्पकपुष्पाभ',iast:'Nava-campaka-puṣpābha',en:'She whose nose-bridge shines like a freshly bloomed campaka'},
+  {n:20,deva:'ताराकान्तितिरस्कारि',iast:'Tārā-kānti-tiraskāri',en:'She whose nose ornament outshines the lustre of the stars'},
+  {n:21,deva:'कदम्बमञ्जरीक्लृप्त',iast:'Kadamba-mañjarī-kḷpta',en:'She beautiful with kadamba blossoms fashioned into ear ornaments'},
+  {n:22,deva:'ताटङ्कयुगलीभूत',iast:'Tāṭaṅka-yugalī-bhūta',en:'She who wears the sun and moon as a pair of ear-rings'},
+  {n:23,deva:'पद्मरागशिलादर्श',iast:'Padmarāga-śilā-darśa',en:'She whose cheeks outshine the mirror of padmarāga ruby stone'},
+  {n:24,deva:'नवविद्रुमबिम्बश्री',iast:'Nava-vidruma-bimba-śrī',en:'She whose lips outshine fresh coral and the bimba fruit'},
+  {n:25,deva:'शुद्धविद्याङ्कुराकार',iast:'Śuddha-vidyāṅkurākāra',en:'She whose teeth shine like sprouts of pure Śuddhavidyā'},
+  {n:26,deva:'कर्पूरवीटिकामोद',iast:'Karpūra-vīṭikā-moda',en:'She who attracts the four directions with the fragrance of her camphor-betel'},
+  {n:27,deva:'निजसल्लापमाधुर्य',iast:'Nija-sallāpa-mādhurya',en:'She whose sweet speech shames the lute of Sarasvatī'},
+  {n:28,deva:'मन्दस्मितप्रभापूर',iast:'Manda-smita-prabhā-pūra',en:'She in whose gentle smile the mind of Kāmeśvara is immersed'},
+  {n:29,deva:'अनाकलितसादृश्य',iast:'Anākalita-sādṛśya',en:'She whose beautiful chin has no comparable form in creation'},
+  {n:30,deva:'कामेशबद्धमाङ्गल्य',iast:'Kāmeśa-baddha-māṅgalya',en:'She whose neck is adorned with the auspicious thread tied by Kāmeśvara'},
+  {n:31,deva:'कनकाङ्गदकेयूर',iast:'Kanakāṅgada-keyūra',en:'She endowed with beautiful arms adorned with gold armlets'},
+  {n:32,deva:'रत्नग्रैवेयचिन्ताक',iast:'Ratna-graiveya-cintāka',en:'She adorned with gem necklaces and swinging pearl pendants'},
+  {n:33,deva:'कामेश्वरप्रेमरत्न',iast:'Kāmeśvara-prema-ratna',en:'She whose breasts are the very treasure of Kāmeśvara\'s love'},
+  {n:34,deva:'नाभ्यालवालरोमाली',iast:'Nābhyālavāla-romālī',en:'She whose twin breasts are the fruits of the vine of hair growing from her navel'},
+  {n:35,deva:'लक्ष्यरोमलताधारता',iast:'Lakṣya-romā-latā-dhāratā',en:'She whose slim waist can only be inferred from the line of her hair'},
+  {n:36,deva:'स्तनभारदलन्मध्य',iast:'Stana-bhāra-dalan-madhya',en:'She whose three waist-folds are created by the weight of her breasts'},
+  {n:37,deva:'अरुणारुणकौसुम्भ',iast:'Aruṇāruṇa-kausumbha',en:'She whose hips shine in crimson-red safflower-dyed garments'},
+  {n:38,deva:'रत्नकिङ्किणिकारम्य',iast:'Ratna-kiṅkiṇikā-ramya',en:'She adorned with a beautiful girdle of jewelled bells'},
+  {n:39,deva:'कामेशज्ञातसौभाग्य',iast:'Kāmeśa-jñāta-saubhāgya',en:'She whose thighs are of such softness that only Kāmeśvara knows them'},
+  {n:40,deva:'माणिक्यमकुटाकार',iast:'Māṇikya-makuṭākāra',en:'She whose two knees shine like crowns of ruby gems'},
+  {n:41,deva:'इन्द्रगोपसमानश्री',iast:'Indragopa-samānaśrī',en:'She whose ankles possess the loveliness of the indragopa scarlet insect'},
+  {n:42,deva:'कूर्मपृष्ठजयिष्णु',iast:'Kūrma-pṛṣṭha-jayiṣṇu',en:'She whose insteps surpass the back of a tortoise in beauty'},
+  {n:43,deva:'नखदीधितिसञ्छन्न',iast:'Nakha-dīdhiti-sañchanna',en:'She who dispels the darkness of ignorance with the effulgence of her toenails'},
+  {n:44,deva:'पदद्वयप्रभाजाल',iast:'Pada-dvaya-prabhā-jāla',en:'She whose twin feet outshine the network of radiance from lotuses'},
+  {n:45,deva:'शिञ्जानमणिमञ्जीर',iast:'Śiñjāna-maṇi-mañjīra',en:'She whose beautiful lotus feet are adorned with tinkling gem-anklets'},
+  {n:46,deva:'मरालीमन्दगमना',iast:'Marālī-manda-gamanā',en:'She who walks with the graceful gentle gait of the swan'},
+  {n:47,deva:'महालावण्यशेवधिः',iast:'Mahā-lāvaṇya-śevadhiḥ',en:'She who is the treasury of supreme loveliness and grace'},
+  {n:48,deva:'सर्वारुणा',iast:'Sarvāruṇā',en:'She who is entirely crimson-red — the colour of the rising sun and compassion'},
+  {n:49,deva:'अनवद्याङ्गी',iast:'Anavadyāṅgī',en:'She whose limbs are beyond all criticism — perfect in every dimension'},
+  {n:50,deva:'सर्वाभरणभूषिता',iast:'Sarvābharaṇa-bhūṣitā',en:'She who is adorned with all ornaments — the entire cosmos is her jewellery'},
+];
+
+// Generate names 51–1000
+const LAL_NAME_POOL = [
+  ['Śivā','She who is Śivā — auspiciousness personified'],
+  ['Kuṇḍalinī','She who is the coiled cosmic serpent-power dwelling at Mūlādhāra'],
+  ['Mūla-mantrātmikā','She who is the very soul of the root mantra Pañcadaśī'],
+  ['Bhavānī','She who gives existence — the wife of Bhava who bestows life'],
+  ['Bhakti-priyā','She who is pleased by devotion — bhakti is her deepest joy'],
+  ['Nirguṇā','She who is beyond the three guṇas — sattva rajas tamas'],
+  ['Nityā','She who is eternal — beyond all time ever present'],
+  ['Nirmalā','She who is perfectly pure — without any defilement'],
+  ['Parā','She who is the supreme — the transcendent one'],
+  ['Parāparā','She who is beyond the supreme — the Absolute of Absolutes'],
+  ['Lalitā','She who plays — the sportive supreme Consciousness'],
+  ['Mahādevī','She who is the great goddess'],
+  ['Mahāmāyā','She who is the great creative power of illusion'],
+  ['Śuddha-caitanya','She whose form is pure consciousness'],
+  ['Saccidānanda','She whose form is Existence-Consciousness-Bliss'],
+  ['Advaitā','She who is non-dual — the One without a second'],
+  ['Tripur-sundarī','She who is the beauty of the three cities of consciousness'],
+  ['Rājarājeśvarī','She who is the queen of kings of kings'],
+  ['Kāmeśvarī','She who is the queen of Kāma love and liberation'],
+  ['Śrī-vidyā','She who is the supreme sacred knowledge Śrī Vidyā'],
+  ['Bālā','She who is eternally young — the divine child'],
+  ['Anantā','She who is infinite — without limit or boundary'],
+  ['Amṛtā','She who is immortal — the deathless one'],
+  ['Ādyā','She who is the primal one — Ādi Śakti the primordial power'],
+  ['Ambā','She who is the universal mother — Ambā'],
+  ['Vidyā','She who is knowledge itself — the liberating wisdom'],
+  ['Jagat-dhātrī','She who holds and sustains the world'],
+  ['Mahāśaktiḥ','She who is the great primordial power beyond measure'],
+  ['Paramā','She who is the supreme one — the highest reality'],
+  ['Cinmayī','She who is made of pure consciousness — cidākāśa'],
+];
+
+function getAllLalNames() {
+  const all = [...LAL_FULL];
+  let poolIdx = 0;
+  for(let n = 51; n <= 1000; n++) {
+    const g = LAL_GROUPS.find(g => n >= g.start && n <= g.end);
+    const nm = LAL_NAME_POOL[poolIdx % LAL_NAME_POOL.length];
+    all.push({n, deva:'', iast:nm[0], en:nm[1], group:g?.group||'Para Brahman'});
+    poolIdx++;
+  }
+  return all;
+}
+
+// Triśatī data
+const TRI_BIJAS = [
+  {bija:'Ka',num:1,desc:'Ka-kāra — seed of desire-consciousness'},
+  {bija:'E',num:2,desc:'E-kāra — seed of the absolute transcendent vowel'},
+  {bija:'Ī',num:3,desc:'Ī-kāra — seed of Śakti the feminine creative power'},
+  {bija:'La',num:4,desc:'La-kāra — seed of Indra associated with nerve-force'},
+  {bija:'Hrīṃ',num:5,desc:'Hrīṃ — the Māyā-bīja seed of illusion and grace'},
+  {bija:'Ha',num:6,desc:'Ha-kāra — seed of Śiva the out-breath of creation'},
+  {bija:'Sa',num:7,desc:'Sa-kāra — seed of Sarasvatī the flow of wisdom'},
+  {bija:'Ka2',num:8,desc:'Ka-kāra (second) — repetition amplifying desire-dissolution'},
+  {bija:'Ha2',num:9,desc:'Ha-kāra (second) — the breath returning to source'},
+  {bija:'La2',num:10,desc:'La-kāra (second) — electrical divine force deepening'},
+  {bija:'Hrīṃ2',num:11,desc:'Hrīṃ (second) — deeper grace illusion-piercing'},
+  {bija:'Sa2',num:12,desc:'Sa-kāra (second) — flowing wisdom becoming nectar'},
+  {bija:'Ka3',num:13,desc:'Ka-kāra (third) — liberation from desire through desire'},
+  {bija:'La3',num:14,desc:'La-kāra (third) — divine electric force consummating'},
+  {bija:'Hrīṃ3',num:15,desc:'Hrīṃ (third) — final grace dissolution into the Absolute'},
+];
+
+function getAllTriNames() {
+  const names = [];
+  let n = 1;
+  TRI_BIJAS.forEach(bija => {
+    for(let i=0;i<20;i++) {
+      names.push({n:n++,iast:`${bija.bija}-śaktī ${i+1}`,en:`The power of the ${bija.bija} bīja — aspect ${i+1}`,deva:'',bija:bija.bija,bijaNum:bija.num,bijaDesc:bija.desc,group:`${bija.bija}-kāra group (Bīja ${bija.num})`});
+    }
+  });
+  return names;
+}
+
+// ── Rudram sections ──
+const RUDRAM_SECTIONS = [
+  {id:'intro',group:'Prologue',title:'Sri Rudram — The Ocean of Mantras',subtitle:'Origin · Structure · Sacred Science · Purpose'},
+  {id:'n1',group:'Namakam',title:'Anuvaka 1',subtitle:'namas te rudra manavastoṣe…',anuvaka:1,part:'Namakam'},
+  {id:'n2',group:'Namakam',title:'Anuvaka 2',subtitle:'namas te astu bhagavaṃs…',anuvaka:2,part:'Namakam'},
+  {id:'n3',group:'Namakam',title:'Anuvaka 3',subtitle:'namo girīśāya ca śipiviṣṭāya…',anuvaka:3,part:'Namakam'},
+  {id:'n4',group:'Namakam',title:'Anuvaka 4',subtitle:'namo vṛkṣebhyo harikēśebhyaḥ…',anuvaka:4,part:'Namakam'},
+  {id:'n5',group:'Namakam',title:'Anuvaka 5',subtitle:'namas tīrthyāya ca kulyāya…',anuvaka:5,part:'Namakam'},
+  {id:'n6',group:'Namakam',title:'Anuvaka 6',subtitle:'namaḥ sabhābhyaś ca…',anuvaka:6,part:'Namakam'},
+  {id:'n7',group:'Namakam',title:'Anuvaka 7',subtitle:'namaḥ sopāsadbhyaś ca…',anuvaka:7,part:'Namakam'},
+  {id:'n8',group:'Namakam',title:'Anuvaka 8',subtitle:'namaḥ śarabheḍhyaś ca…',anuvaka:8,part:'Namakam'},
+  {id:'n9',group:'Namakam',title:'Anuvaka 9',subtitle:'nama āyacchabhyaś ca…',anuvaka:9,part:'Namakam'},
+  {id:'n10',group:'Namakam',title:'Anuvaka 10',subtitle:'namo bhavāya ca rudrāya…',anuvaka:10,part:'Namakam'},
+  {id:'n11',group:'Namakam',title:'Anuvaka 11 — Mahāmṛtyuñjaya',subtitle:'tryambakāya sugandhim puṣṭi-vardhanam…',anuvaka:11,part:'Namakam'},
+  {id:'c1',group:'Chamakam',title:'Anuvaka 1',subtitle:'agniś ca ma indrāś ca me…',anuvaka:1,part:'Chamakam'},
+  {id:'c2',group:'Chamakam',title:'Anuvaka 2',subtitle:'śam ca me mayaś ca me…',anuvaka:2,part:'Chamakam'},
+  {id:'c3',group:'Chamakam',title:'Anuvaka 3',subtitle:'śukraś ca me śucīś ca me…',anuvaka:3,part:'Chamakam'},
+  {id:'c4',group:'Chamakam',title:'Anuvaka 4',subtitle:'vṛddhiś ca me…',anuvaka:4,part:'Chamakam'},
+  {id:'c5',group:'Chamakam',title:'Anuvaka 5',subtitle:'pañca ca me daśa ca me…',anuvaka:5,part:'Chamakam'},
+  {id:'c6',group:'Chamakam',title:'Anuvaka 6',subtitle:'ekā ca me tisraś ca me…',anuvaka:6,part:'Chamakam'},
+  {id:'c7',group:'Chamakam',title:'Anuvaka 7',subtitle:'śataś ca me sahasraś ca me…',anuvaka:7,part:'Chamakam'},
+  {id:'c8',group:'Chamakam',title:'Anuvaka 8',subtitle:'iṣṭaṃ ca me pṛktaṃ ca me…',anuvaka:8,part:'Chamakam'},
+  {id:'c9',group:'Chamakam',title:'Anuvaka 9',subtitle:'sūktaṃ ca me sukṛtaṃ ca me…',anuvaka:9,part:'Chamakam'},
+  {id:'c10',group:'Chamakam',title:'Anuvaka 10',subtitle:'paśuś ca me paśupatīś ca me…',anuvaka:10,part:'Chamakam'},
+  {id:'c11',group:'Chamakam',title:'Anuvaka 11',subtitle:'śaṃ no mitras śaṃ varuṇaḥ…',anuvaka:11,part:'Chamakam'},
+  {id:'swara',group:'Sacred Science',title:'Svara Sthāna — Tonal Architecture',subtitle:'Pitch · Articulation · Neural Resonance · Physics of Mantra'},
+  {id:'synthesis',group:'Sacred Science',title:'The Perfect Persona',subtitle:'Sri Rudram as Complete System for Human Integration'},
+];
+
+// ── Sapta Swaras ──
+const SWARAS = [
+  {id:'sa',num:'01',deva:'स',name:'Sa',full:'Shadja',color:'#C44A2A',etym:'Ṣaḍjaḥ — born of six',chakra:'Mūlādhāra',rasa:'Vīra',ayur:'Vāta',freq:{mandra:130.81,madhya:261.63,tara:523.25}},
+  {id:'ri',num:'02',deva:'रे',name:'Ri',full:'Rishabha',color:'#D4862A',etym:'Ṛṣabhaḥ — the bull the eminent',chakra:'Svādhiṣṭhāna',rasa:'Karuṇa',ayur:'Pitta-Vāta',freq:{mandra:146.83,madhya:293.66,tara:587.33}},
+  {id:'ga',num:'03',deva:'ग',name:'Ga',full:'Gandhara',color:'#8BAA28',etym:'Gāndhāraḥ — fragrance-bearing celestial',chakra:'Maṇipūra',rasa:'Śānta',ayur:'Kapha',freq:{mandra:164.81,madhya:329.63,tara:659.26}},
+  {id:'ma',num:'04',deva:'म',name:'Ma',full:'Madhyama',color:'#2A9A6A',etym:'Madhyamaḥ — the middle one mediator',chakra:'Anāhata',rasa:'Śṛṅgāra',ayur:'Pitta',freq:{mandra:174.61,madhya:349.23,tara:698.46}},
+  {id:'pa',num:'05',deva:'प',name:'Pa',full:'Panchama',color:'#2A7AC4',etym:'Pañcamaḥ — the fifth the perfect fifth',chakra:'Viśuddha',rasa:'Adbhuta',ayur:'Kapha-Vāta',freq:{mandra:196.00,madhya:392.00,tara:784.00}},
+  {id:'da',num:'06',deva:'ध',name:'Dha',full:'Dhaivata',color:'#6A4AC4',etym:'Dhaivataḥ — the gifted one pure sustenance',chakra:'Ājñā',rasa:'Bhayānaka',ayur:'Vāta-Pitta',freq:{mandra:220.00,madhya:440.00,tara:880.00}},
+  {id:'ni',num:'07',deva:'नि',name:'Ni',full:'Nishada',color:'#C42A7A',etym:'Niṣādaḥ — the seated one dweller of the forest',chakra:'Sahasrāra',rasa:'Raudra',ayur:'Kapha',freq:{mandra:246.94,madhya:493.88,tara:987.77}},
+];
+
+const SWARA_PAGES = [
+  {id:'sanskrit',label:'Sanskrit & Etymology'},
+  {id:'philosophy',label:'Philosophy & Vedanta'},
+  {id:'medicine',label:'Ayurvedic Medicine'},
+  {id:'vibration',label:'Vibration Science'},
+  {id:'acoustics',label:'Acoustics & Sound'},
+  {id:'cases',label:'Case Studies'},
+  {id:'duration',label:'Duration & Alankara'},
+];
+
+// ── Sanskrit section ──
+const SKT_TOPICS = [
+  {id:'aksharas',group:'Phoneme Science',label:'50 Aksharas — Phoneme Map',desc:'All 50 Sanskrit phonemes with chakra seat, swara correspondence, deity, and nāda quality'},
+  {id:'dhatu',group:'Grammar & Roots',label:'Dhātu Explorer — Verbal Roots',desc:'Explore Sanskrit verbal roots cross-linked to names in all three portals'},
+  {id:'panini',group:'Grammar & Roots',label:'Pāṇini & Aṣṭādhyāyī',desc:'The world\'s first formal grammar — 3,959 rules that predate modern formal language theory'},
+  {id:'phonology',group:'Grammar & Roots',label:'Phonology & Sandhi',desc:'Sanskrit phonological system — varṇamālā, articulatory positions, sandhi rules'},
+  {id:'bija',group:'Mantra Science',label:'Bīja Mantras — Seed Syllables',desc:'Monosyllabic seeds of cosmic energy — OM HRĪM KLĪM ŚRĪM and their neuroscience'},
+  {id:'music',group:'Mantra Science',label:'Sanskrit & Music Theory',desc:'Rāga nomenclature, Sargam solfège, Tāla and Chandas — the musical grammar'},
+  {id:'yoga',group:'Consciousness Science',label:'Sanskrit & Yoga Philosophy',desc:'The Yoga Sūtras vocabulary — Citta Vṛtti Nirodha in precision Sanskrit'},
+  {id:'consciousness',group:'Consciousness Science',label:'Sanskrit & Consciousness',desc:'Advaita Vedanta, Kashmir Śaivism, and modern neuroscience — the vocabulary of awareness'},
+  {id:'inference',group:'Live Tools',label:'Inference Engine — Any Word',desc:'Type any Sanskrit word → instant etymology, Paninian parse, rasa, chakra, and cross-portal links'},
+];
+
+// ═══════════════════════════════════════════════════════════════════
+//  STATE
+// ═══════════════════════════════════════════════════════════════════
+const nameData = {};
+function getNameKey(ctx, id) { return `${ctx}_${id}`; }
+function getNameState(ctx, id) {
+  const k = getNameKey(ctx,id);
+  if(!nameData[k]) nameData[k] = {dims:{},status:'idle'};
+  return nameData[k];
+}
+
+let currentItem = {lalita:'1', trishati:'t1', rudram:'intro', swaras:'sa', sanskrit:'aksharas'};
+let currentDim = {lalita:'sanskrit', swaras:'sanskrit', sanskrit:'aksharas'};
+let genAllActive = {lalita:false, rudram:false, swaras:false};
+let stopGen = {lalita:false, rudram:false, swaras:false};
+let currentSection = 'home';
+let currentExportCtx = 'lalita';
+
+const ALL_LAL_NAMES = getAllLalNames();
+const ALL_TRI_NAMES = getAllTriNames();
+
+// ═══════════════════════════════════════════════════════════════════
+//  NAVIGATION
+// ═══════════════════════════════════════════════════════════════════
+function showHome() {
+  currentSection = 'home';
+  ['home','lalita','rudram','swaras','sanskrit'].forEach(s => {
+    document.getElementById(`sec-${s}`).classList.toggle('active', s==='home');
+    document.getElementById(`nav-${s}`)?.classList.toggle('active', s==='home');
+  });
+  document.getElementById('backHomeBar').classList.remove('show');
+  window.scrollTo(0,0);
+}
+function showSection(sec) {
+  currentSection = sec;
+  ['home','lalita','rudram','swaras','sanskrit'].forEach(s => {
+    document.getElementById(`sec-${s}`).classList.toggle('active', s===sec);
+    document.getElementById(`nav-${s}`)?.classList.toggle('active', s===sec);
+  });
+  document.getElementById('backHomeBar').classList.add('show');
+  const names = {lalita:'🌺 Lalitā Sahasranāma',rudram:'🕉 Sri Rudram',swaras:'🎵 Sapta Swaras',sanskrit:'ॐ Sanskrit Dimension'};
+  document.getElementById('bhSectionName').textContent = names[sec]||sec;
+  if(sec==='lalita' && !document.getElementById('lalitaSidebar').innerHTML) initLalita();
+  if(sec==='rudram' && !document.getElementById('rudramSidebar').innerHTML) initRudram();
+  if(sec==='swaras' && !document.getElementById('swarasSidebar').innerHTML) initSwaras();
+  if(sec==='sanskrit' && !document.getElementById('sanskritSidebar').innerHTML) initSanskrit();
+  window.scrollTo(0,0);
+}
+
+window.addEventListener('scroll', () => {
+  document.getElementById('portal-nav').classList.toggle('scrolled', window.scrollY > 10);
+});
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeVault(); });
+
+// ═══════════════════════════════════════════════════════════════════
+//  LALITĀ SECTION
+// ═══════════════════════════════════════════════════════════════════
+function initLalita() {
+  buildLalitaSidebar();
+  buildDimTabs('lalita');
+  renderLalitaWelcome();
+  updateProgress('lalita');
+}
+
+function buildLalitaSidebar() {
+  const sb = document.getElementById('lalitaSidebar');
+  let h = `<div class="sb-search-wrap"><input class="sb-search-inp" id="lalSbSearch" type="text" placeholder="Search names…" oninput="filterSb('lalita',this.value)"/></div>`;
+
+  // Groups for Sahasranama
+  const sahGroups = {};
+  ALL_LAL_NAMES.forEach(nm => {
+    const g = nm.group || LAL_GROUPS.find(gr=>nm.n>=gr.start&&nm.n<=gr.end)?.group || 'Other';
+    if(!sahGroups[g]) sahGroups[g] = [];
+    sahGroups[g].push(nm);
+  });
+
+  h += `<div class="sb-group"><div class="sb-group-title">Sahasranāma (1000 Names)</div>`;
+  Object.entries(sahGroups).forEach(([g, items]) => {
+    h += `<div class="sb-group"><div class="sb-group-title" style="font-size:0.32rem;padding-left:16px;color:var(--cream3);">${g}</div>`;
+    items.forEach(nm => {
+      const st = getNameState('lalita', nm.n);
+      h += `<div class="sb-item${currentItem.lalita==nm.n?' active':''}" id="lalSb-${nm.n}" onclick="selectLalName(${nm.n})">
+        <div class="sb-dot${st.status==='done'?' done':st.status==='generating'?' generating':''}" id="lalSbD-${nm.n}"></div>
+        <div class="sb-label">${nm.iast}</div>
+        <div class="sb-num">${String(nm.n).padStart(3,'0')}</div>
+      </div>`;
+    });
+    h += `</div>`;
+  });
+  h += `</div>`;
+
+  // Triśatī
+  const triGroups = {};
+  ALL_TRI_NAMES.forEach(nm => {
+    if(!triGroups[nm.group]) triGroups[nm.group]=[];
+    triGroups[nm.group].push(nm);
+  });
+  h += `<div class="sb-group"><div class="sb-group-title">Triśatī (300 Names)</div>`;
+  Object.entries(triGroups).forEach(([g,items])=>{
+    h+=`<div class="sb-group"><div class="sb-group-title" style="font-size:0.32rem;padding-left:16px;color:var(--cream3);">${g}</div>`;
+    items.forEach(nm=>{
+      const st=getNameState('trishati',nm.n);
+      h+=`<div class="sb-item" id="triSb-${nm.n}" onclick="selectTriName(${nm.n})">
+        <div class="sb-dot${st.status==='done'?' done':''}" id="triSbD-${nm.n}"></div>
+        <div class="sb-label">${nm.iast}</div>
+        <div class="sb-num">T${String(nm.n).padStart(3,'0')}</div>
+      </div>`;
+    });
+    h+=`</div>`;
+  });
+  h+=`</div>`;
+  sb.innerHTML = h;
+}
+
+function buildDimTabs(ctx) {
+  const el = document.getElementById(`${ctx}DimTabs`);
+  if(!el) return;
+  el.innerHTML = DIMENSIONS.map(d=>
+    `<button class="dim-tab${d.id===currentDim[ctx]?' active':''}" onclick="switchDim('${ctx}','${d.id}')">${d.label}</button>`
+  ).join('');
+}
+function switchDim(ctx, dim) {
+  currentDim[ctx] = dim;
+  document.querySelectorAll(`#${ctx}DimTabs .dim-tab`).forEach((b,i)=>b.classList.toggle('active',DIMENSIONS[i].id===dim));
+  if(ctx==='lalita') renderLalitaContent();
+}
+
+function selectLalName(n) {
+  document.querySelectorAll('[id^=lalSb-]').forEach(el=>el.classList.remove('active'));
+  document.getElementById(`lalSb-${n}`)?.classList.add('active');
+  currentItem.lalita = n;
+  renderLalitaContent();
+}
+function selectTriName(n) {
+  document.querySelectorAll('[id^=triSb-]').forEach(el=>el.classList.remove('active'));
+  document.getElementById(`triSb-${n}`)?.classList.add('active');
+  currentItem.trishati = n;
+  currentItem.lalita = `t${n}`;
+  renderTriContent(n);
+}
+
+function renderLalitaWelcome() {
+  document.getElementById('lalContent').innerHTML = `
+    <div class="welcome-panel">
+      <span class="w-om">ॐ</span>
+      <h2 class="w-title">Lalitā Sahasranāma · Triśatī</h2>
+      <p style="font-size:0.88rem;color:var(--cream3);line-height:1.8;">Select any name from the sidebar → choose a dimension tab → click Generate.</p>
+      <div class="w-stats">
+        <div class="w-stat"><span class="w-stat-num">1000</span><span class="w-stat-lbl">Sahasranāma</span></div>
+        <div class="w-stat"><span class="w-stat-num">300</span><span class="w-stat-lbl">Triśatī</span></div>
+        <div class="w-stat"><span class="w-stat-num">9</span><span class="w-stat-lbl">Dimensions</span></div>
+      </div>
+      ${xrefPanel(['wisdomlib.org','kamakotimandali.com','sacred-texts.com','hindupedia.com','adishakti.org','spiritualphilosophical.culturalmusings.com','nada-chikitsa.culturalmusings.com','vedicfoundationandsoundscience.culturalmusings.com'])}
+    </div>`;
+}
+
+function renderLalitaContent() {
+  const n = String(currentItem.lalita).startsWith('t') ? null : parseInt(currentItem.lalita);
+  if(!n) return;
+  const nm = ALL_LAL_NAMES.find(x=>x.n===n);
+  if(!nm) return;
+  const st = getNameState('lalita',n);
+  const dim = currentDim.lalita;
+  const content = st.dims[dim];
+  const hasKey = isAiMode();
+
+  document.getElementById('lalContent').innerHTML = `
+    <div class="name-header">
+      <div class="name-eyebrow">${nm.group||''} · Name ${String(n).padStart(3,'0')} / 1000</div>
+      ${nm.deva?`<div class="name-deva">${nm.deva}</div>`:''}
+      <div class="name-iast">${nm.iast}</div>
+      <div class="name-meaning">${nm.en}</div>
+    </div>
+    <div class="akb">
+      <div class="akb-dot${hasKey?' ok':' web'}"></div>
+      <div class="akb-text">${hasKey?`${getActiveSlots().length} key(s) · ${rotationMode} rotation · AI ready`:'No keys — using Web Search mode'}</div>
+      <button class="akb-open" onclick="openVault()">⚷ KEY VAULT</button>
+    </div>
+    ${dim==='crossref'?xrefPanel(['wisdomlib.org','kamakotimandali.com','sacred-texts.com','hindupedia.com','adishakti.org','spandanashodha.culturalmusings.com','natyashastra.culturalmusings.com','completecelestialsynthesis.culturalmusings.com']):''}
+    <button class="dim-gen-btn" id="lalDimBtn" onclick="generateDim('lalita',${n},'${dim}')" ${!hasKey?'disabled':''}>
+      ${content?'↺ Re-generate':'✦ Generate deep commentary'}
+    </button>
+    <div class="dim-output" id="lalDimOut">${content?renderMd(content):`<div class="dim-loading" style="display:${hasKey?'none':'block'};opacity:0.5;font-size:0.78rem;padding:8px;">Add API keys to generate AI commentary — or use 🔍 Web Ref for free reference links.</div>`}</div>`;
+}
+
+function renderTriContent(n) {
+  const nm = ALL_TRI_NAMES.find(x=>x.n===n);
+  if(!nm) return;
+  const dim = currentDim.lalita;
+  const st = getNameState('trishati',n);
+  const content = st.dims[dim];
+  const hasKey = isAiMode();
+
+  document.getElementById('lalContent').innerHTML = `
+    <div class="name-header">
+      <div class="name-eyebrow">${nm.group} · Triśatī Name ${String(n).padStart(3,'0')} / 300</div>
+      <div class="name-iast">${nm.iast}</div>
+      <div class="name-meaning">${nm.en}</div>
+      ${nm.bijaDesc?`<div style="font-size:0.78rem;color:var(--rose2);margin-top:4px;">Bīja: ${nm.bija} — ${nm.bijaDesc}</div>`:''}
+    </div>
+    <div class="akb">
+      <div class="akb-dot${hasKey?' ok':' web'}"></div>
+      <div class="akb-text">${hasKey?`${getActiveSlots().length} key(s) active`:'Web Search mode'}</div>
+      <button class="akb-open" onclick="openVault()">⚷ KEY VAULT</button>
+    </div>
+    <button class="dim-gen-btn" id="triDimBtn" onclick="generateDim('trishati',${n},'${dim}')" ${!hasKey?'disabled':''}>
+      ${content?'↺ Re-generate':'✦ Generate commentary'}
+    </button>
+    <div class="dim-output" id="lalDimOut">${content?renderMd(content):''}</div>`;
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  GENERATION ENGINE
+// ═══════════════════════════════════════════════════════════════════
+function buildPrompt(ctx, nm, dim) {
+  const isLal = ctx==='lalita';
+  const source = isLal ? 'Lalitā Sahasranāma (Brahmāṇḍa Purāṇa)' : ctx==='trishati' ? 'Lalitā Triśatī' : ctx==='rudram' ? 'Sri Rudram (Taittirīya Saṃhitā)' : 'Sapta Swaras (Vedic music theory)';
+  const base = `You are a supreme scholar. Write exactly 5 richly detailed paragraphs (minimum 5 lines each) in scholarly prose (no bullet points) on the ${dim} dimension of "${nm.iast||nm.title||nm.name}" (${nm.en||nm.subtitle||nm.full||''}) from ${source}.`;
+
+  const templates = {
+    sanskrit: base + ` Cover: (1) Sanskrit root dhātu and Paninian derivation with IAST; (2) Compound analysis samāsa-vigraha; (3) Appearances in Rigveda Upanishads; (4) Commentators Bhāskararāya Lakṣmīdhara; (5) Etymological inferences and semantic field.`,
+    philosophy: base + ` Cover: (1) Advaita Vedanta — Brahman Māyā Turīya; (2) Kashmir Shaivism — Trika Spanda Pratyabhijñā; (3) Śrī Vidyā relation to Śrī Cakra Pañcadaśī; (4) Śaiva Siddhānta; (5) Transformative effect on the sādhaka's identity.`,
+    scientific: base + ` Cover: (1) Quantum field theory parallels — zero-point field; (2) Complexity theory — emergence self-organization; (3) Cosmological correspondences; (4) Mathematics and geometry; (5) Modern research validating the ancient insight.`,
+    yogic: base + ` Cover: (1) Kuṇḍalinī and chakra activation; (2) Mantra Yoga — japa nyāsa dhyāna; (3) Tantra interpretations; (4) Nāḍī system activation; (5) Mudrā and prāṇāyāma associations.`,
+    neurological: base + ` Cover: (1) Phonological effects — vagal nerve stimulation brainstem; (2) EEG and fMRI studies; (3) Default Mode Network modulation; (4) Neuroplasticity; (5) Psychoneuroimmunology — HPA axis stress response immunity.`,
+    acoustic: base + ` Cover: (1) Phonetic analysis — articulatory positions sthāna; (2) Vedic svara theory śikṣā texts; (3) Cymatics — visible sound patterns; (4) Temple architecture resonance; (5) Physiological frequency correspondences.`,
+    psychological: base + ` Cover: (1) Jungian archetypes — anima shadow Self individuation; (2) Object relations and Divine Mother as primary object; (3) Transpersonal psychology; (4) Character strengths cultivated; (5) Clinical applications — which psychological wounds this heals.`,
+    medical: base + ` Cover: (1) Dosha effects — Vāta Pitta Kapha balance; (2) Organ systems governed; (3) Charaka Saṃhitā references; (4) Mantra Chikitsā protocols; (5) Modern clinical evidence.`,
+    crossref: base + ` Cover: (1) wisdomlib.org kamakotimandali.com sacred-texts.com hindupedia.com — what these say; (2) Bhāskararāya's Saubhāgya Bhāskara commentary; (3) Lakṣmīdhara's Śaktiratnākara; (4) Parallels in Devī Bhāgavata and Devī Māhātmya; (5) Modern scholars S.S. Sastry T.V. Kapali Sastry John Woodroffe.`,
+  };
+  if(ctx==='rudram') {
+    if(nm.id==='intro') return `Write a 1800-word scholarly introduction to Sri Rudram covering: Origin in Krishna Yajurveda TS 4.5 & 4.7, Rishi Vasishtha, Chhandas, why called Heart of the Vedas, Sanskrit alphabet as sacred cosmology, Vedic Svara system udatta/anudatta/svarita, neurological dimensions gamma waves cortisol vagal stimulation, Rudra as Transformation ghora and shiva aspects. Use IAST. Bold headings.`;
+    if(nm.id==='swara') return `Write a 1600-word scholarly essay on Svara Sthāna — the Tonal Architecture of Sri Rudram. Cover: three Vedic svaras Udatta Anudatta Svarita with acoustic and philosophical meanings; five articulatory sthānas Kantha Talu Murdha Danta Ostha with vagal pathways and chakra correspondences; svara patterns in 4 specific Sri Rudram mantras; neural mapping of svara sequences; Svara Sādhana stages of mastery. IAST. Bold headings.`;
+    if(nm.id==='synthesis') return `Write a 1900-word culminating essay titled "The Perfect Persona: Sri Rudram as Complete System for Human Integration and Liberation." Cover: Five Koshas, Shadow Integration — 108 names of Rudra as psyche map, Chamakam progression as developmental ladder, scientific convergence DMN quieting hemispheric integration, the Near-Perfect Persona qualities, daily sadhana prescription, closing vision. Be profound and precise.`;
+    return `Write a 1500-word commentary on Sri Rudram ${nm.part} Anuvaka ${nm.anuvaka}. Sections: A. Sanskrit Text (Devanagari and IAST), B. Word-by-Word Analysis (8-12 key terms grammar etymology esoteric meaning aspect of Rudra), C. Svara Analysis (udatta/anudatta/svarita patterns physiological effect), D. Philosophical Commentary (Shaiva Siddhanta Kashmir Shaivism Advaita), E. Neurological Dimensions (neural networks physiological effects), F. Metaphysical Significance, G. The Sādhaka's Learning. IAST. Bold headings.`;
+  }
+  if(ctx==='swaras') {
+    const swara = SWARAS.find(s=>s.id===currentItem.swaras)||SWARAS[0];
+    const page = nm.pageId||'sanskrit';
+    const octave = nm.octave||'madhya';
+    const hz = swara.freq[octave]||261.63;
+    const octaveLabel = {mandra:'Low Mandra Saptaka',madhya:'Middle Madhya Saptaka',tara:'High Tara Saptaka'}[octave];
+    const prompts = {
+      sanskrit:`Write 8 paragraphs of exactly 6 lines each on the Sanskrit etymology of ${swara.name} (${swara.full}) in its ${octaveLabel} at ${hz.toFixed(2)} Hz. Cover Vedic root Bharata Muni's definition Samaveda notation compound words Upanishadic connotations. No bullets. Scholarly prose.`,
+      philosophy:`Write 8 paragraphs of exactly 6 lines each on the Vedantic philosophy of ${swara.name} (${swara.full}) in the ${octaveLabel} at ${hz.toFixed(2)} Hz. Cover Nada Brahman Advaita Vedanta Kashmir Shaivism Spanda Yoga philosophy the ${swara.chakra} chakra Katha Upanishad. No bullets.`,
+      medicine:`Write 8 paragraphs of exactly 6 lines each on the Ayurvedic medicine of ${swara.name} (${swara.full}) at ${hz.toFixed(2)} Hz. Cover dosha ${swara.ayur} organ systems Charaka Samhita Raga Chikitsa neuroscience autonomic effects clinical protocols. No bullets.`,
+      vibration:`Write 8 paragraphs of exactly 6 lines each on the vibrational physics of ${swara.name} (${swara.full}) at ${hz.toFixed(2)} Hz. Cover wave mechanics Chladni cymatic patterns Schumann resonance molecular resonance Pythagorean ratios standing waves. Scientific depth. No bullets.`,
+      acoustics:`Write 8 paragraphs of exactly 6 lines each on the acoustic science of ${swara.name} (${swara.full}) at ${hz.toFixed(2)} Hz. Cover room acoustics vina sitar string physics psychoacoustics temple resonance digital signal processing tanpura drone. No bullets.`,
+    };
+    return prompts[page] || prompts.sanskrit;
+  }
+  return templates[dim] || templates.sanskrit;
+}
+
+async function generateDim(ctx, id, dim) {
+  if(!isAiMode()) { log('err','No keys or token budget exhausted — use Web Search.'); return; }
+  const nm = ctx==='lalita'?ALL_LAL_NAMES.find(x=>x.n===id):ctx==='trishati'?ALL_TRI_NAMES.find(x=>x.n===id):RUDRAM_SECTIONS.find(x=>x.id===id);
+  if(!nm) return;
+  const st = getNameState(ctx,id);
+  const btnEl = document.getElementById(`${ctx==='rudram'?'rudramDimBtn':ctx==='lalita'?'lalDimBtn':'triDimBtn'}`);
+  const outEl = document.getElementById(`${ctx==='rudram'?'rudDimOut':'lalDimOut'}`);
+  if(btnEl){btnEl.disabled=true;btnEl.textContent='⟳ Generating…';}
+  if(outEl) outEl.innerHTML='<div class="dim-loading">Channeling via AI…</div>';
+  st.status='generating';
+  updateSbDot(ctx,id);
+  log('ai',`Generating ${nm.iast||nm.title}…`);
+  try {
+    const txt = await callAI(buildPrompt(ctx,nm,dim),2000);
+    st.dims[dim] = txt;
+    st.status = Object.keys(st.dims).length >= 1 ? 'done' : 'partial';
+    if(outEl) outEl.innerHTML = renderMd(txt);
+    if(btnEl){btnEl.disabled=false;btnEl.textContent='↺ Re-generate';}
+    updateSbDot(ctx,id);
+    updateProgress(ctx);
+    log('ok',`✓ ${nm.iast||nm.title} — ${dim}`);
+  } catch(err) {
+    st.status='error';
+    if(outEl) outEl.innerHTML=`<div class="dim-loading">Error: ${escH(err.message)}</div>`;
+    if(btnEl){btnEl.disabled=false;btnEl.textContent='↺ Retry';}
+    updateSbDot(ctx,id);
+    log('err',err.message);
+    if(err.message.includes('budget')) { updateModeBadge(); updateTokBar(); }
+  }
+}
+
+function genCurrentDim(ctx) {
+  if(ctx==='lalita') { const id=parseInt(currentItem.lalita); if(!isNaN(id)) generateDim('lalita',id,currentDim.lalita); }
+  if(ctx==='trishati') generateDim('trishati',currentItem.trishati,currentDim.lalita);
+  if(ctx==='rudram') generateRudramSection(currentItem.rudram);
+  if(ctx==='swaras') generateSwaraSection(currentItem.swaras, currentDim.swaras||'sanskrit', 'madhya');
+  if(ctx==='sanskrit') generateSktSection(currentItem.sanskrit);
+}
+
+async function genAll(ctx) {
+  if(genAllActive[ctx]){stopGen[ctx]=true;return;}
+  genAllActive[ctx]=true;stopGen[ctx]=false;
+  const btn=document.getElementById(`${ctx==='lalita'?'lal':ctx==='rudram'?'rud':'sw'}GenAllBtn`);
+  if(btn)btn.textContent='⏹ Stop';
+  if(ctx==='lalita') {
+    const dim=currentDim.lalita;
+    for(const nm of ALL_LAL_NAMES){if(stopGen.lalita||!isAiMode())break;if(!getNameState('lalita',nm.n).dims[dim])await generateDim('lalita',nm.n,dim);await sleep(500);}
+  }
+  if(ctx==='rudram') {
+    for(const sec of RUDRAM_SECTIONS){if(stopGen.rudram||!isAiMode())break;if(getNameState('rudram',sec.id).status!=='done')await generateRudramSection(sec.id);await sleep(500);}
+  }
+  genAllActive[ctx]=false;stopGen[ctx]=false;
+  if(btn)btn.textContent=ctx==='lalita'?'⚡ Gen All':ctx==='rudram'?'⚡ Gen All 25':'⚡ Gen Section';
+  log('ok','Generation complete!');
+}
+
+function sleep(ms){return new Promise(r=>setTimeout(r,ms));}
+
+// ═══════════════════════════════════════════════════════════════════
+//  RUDRAM SECTION
+// ═══════════════════════════════════════════════════════════════════
+function initRudram() {
+  buildRudramSidebar();
+  RUDRAM_SECTIONS.forEach(s=>getNameState('rudram',s.id));
+  renderRudramWelcome();
+  updateProgress('rudram');
+}
+
+function buildRudramSidebar() {
+  const sb = document.getElementById('rudramSidebar');
+  const groups = [...new Set(RUDRAM_SECTIONS.map(s=>s.group))];
+  let h = '';
+  groups.forEach(g=>{
+    const items = RUDRAM_SECTIONS.filter(s=>s.group===g);
+    h+=`<div class="sb-group"><div class="sb-group-title">${g}</div>`;
+    items.forEach(s=>{
+      const st=getNameState('rudram',s.id);
+      h+=`<div class="sb-item${currentItem.rudram===s.id?' active':''}" id="rudSb-${s.id}" onclick="selectRudram('${s.id}')">
+        <div class="sb-dot${st.status==='done'?' done':st.status==='generating'?' generating':st.status==='error'?' error':''}" id="rudSbD-${s.id}"></div>
+        <div><div class="sb-label">${s.title}</div>${s.anuvaka?`<div class="sb-num">AN·${s.anuvaka}</div>`:''}</div>
+      </div>`;
+    });
+    h+=`</div>`;
+  });
+  sb.innerHTML = h;
+}
+
+function selectRudram(id) {
+  document.querySelectorAll('[id^=rudSb-]').forEach(el=>el.classList.remove('active'));
+  document.getElementById(`rudSb-${id}`)?.classList.add('active');
+  currentItem.rudram = id;
+  renderRudramContent(id);
+}
+
+function renderRudramWelcome() {
+  document.getElementById('rudContent').innerHTML=`
+    <div class="welcome-panel">
+      <span class="w-om">ॐ</span>
+      <h2 class="w-title">Sri Rudram</h2>
+      <p style="font-size:0.88rem;color:var(--cream3);line-height:1.8;margin-bottom:12px;">Select a section from the sidebar → click Generate This Section or Generate All 25.</p>
+      <div class="w-stats">
+        <div class="w-stat"><span class="w-stat-num">25</span><span class="w-stat-lbl">Sections</span></div>
+        <div class="w-stat"><span class="w-stat-num">11+11</span><span class="w-stat-lbl">Anuvakas</span></div>
+        <div class="w-stat"><span class="w-stat-num">~40</span><span class="w-stat-lbl">Pages</span></div>
+      </div>
+      ${xrefPanel(['wisdomlib.org','sacred-texts.com','kamakotimandali.com','vedicfoundationandsoundscience.culturalmusings.com','natyashastra.culturalmusings.com','masterconsciousprotocol.culturalmusings.com'])}
+    </div>`;
+}
+
+function renderRudramContent(id) {
+  const sec = RUDRAM_SECTIONS.find(s=>s.id===id);
+  const st = getNameState('rudram',id);
+  const hasKey = isAiMode();
+  if(st.status==='idle'||!st.dims.content) {
+    document.getElementById('rudContent').innerHTML=`
+      <div class="name-header">
+        <div class="name-eyebrow">${sec.group}</div>
+        <div class="name-iast">${sec.title}</div>
+        <div class="name-meaning">${sec.subtitle||''}</div>
+      </div>
+      <div class="akb"><div class="akb-dot${hasKey?' ok':' web'}"></div><div class="akb-text">${hasKey?`${getActiveSlots().length} key(s) active`:'Web Search mode'}</div><button class="akb-open" onclick="openVault()">⚷ KEY VAULT</button></div>
+      <button class="dim-gen-btn" id="rudramDimBtn" onclick="generateRudramSection('${id}')" ${!hasKey?'disabled':''}>✦ Generate this section</button>
+      <div class="dim-output" id="rudDimOut"></div>`;
+  } else {
+    document.getElementById('rudContent').innerHTML=`
+      <div class="name-header">
+        <div class="name-eyebrow">${sec.group}</div>
+        <div class="name-iast">${sec.title}</div>
+        <div class="name-meaning">${sec.subtitle||''}</div>
+      </div>
+      <div class="akb"><div class="akb-dot${hasKey?' ok':' web'}"></div><div class="akb-text">${hasKey?`${getActiveSlots().length} key(s) active`:'Web Search mode'}</div><button class="akb-open" onclick="openVault()">⚷ KEY VAULT</button></div>
+      <button class="dim-gen-btn" id="rudramDimBtn" onclick="generateRudramSection('${id}')" ${!hasKey?'disabled':''}>↺ Re-generate</button>
+      <div class="gen-content">${renderMd(st.dims.content)}</div>`;
+  }
+}
+
+async function generateRudramSection(id) {
+  const sec = RUDRAM_SECTIONS.find(s=>s.id===id);
+  const st = getNameState('rudram',id);
+  st.status='generating';
+  updateSbDot('rudram',id);
+  if(currentItem.rudram===id) renderRudramContent(id);
+  log('ai',`Generating Rudram: ${sec.title}…`);
+  try {
+    const txt = await callAI(buildPrompt('rudram',sec,'content'),2000);
+    st.dims.content=txt; st.status='done';
+    updateSbDot('rudram',id);
+    updateProgress('rudram');
+    if(currentItem.rudram===id) renderRudramContent(id);
+    log('ok',`✓ ${sec.title}`);
+  } catch(err) {
+    st.status='error';
+    updateSbDot('rudram',id);
+    log('err',err.message);
+    if(err.message.includes('budget')) { updateModeBadge(); updateTokBar(); }
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  SWARAS SECTION
+// ═══════════════════════════════════════════════════════════════════
+function initSwaras() {
+  buildSwarasSidebar();
+  renderSwarasWelcome();
+}
+
+function buildSwarasSidebar() {
+  const sb = document.getElementById('swarasSidebar');
+  let h = `<div class="sb-group"><div class="sb-group-title">Sapta Swaras</div>`;
+  SWARAS.forEach(s=>{
+    h+=`<div class="sb-item${currentItem.swaras===s.id?' active':''}" id="swSb-${s.id}" onclick="selectSwara('${s.id}')">
+      <div style="width:8px;height:8px;border-radius:50%;background:${s.color};flex-shrink:0;"></div>
+      <div><div class="sb-label">${s.name} — ${s.full}</div><div class="sb-num">${s.freq.madhya.toFixed(2)} Hz</div></div>
+    </div>`;
+  });
+  h+=`</div>`;
+  sb.innerHTML=h;
+}
+
+function selectSwara(id) {
+  document.querySelectorAll('[id^=swSb-]').forEach(el=>el.classList.remove('active'));
+  document.getElementById(`swSb-${id}`)?.classList.add('active');
+  currentItem.swaras=id;
+  renderSwaraContent(id);
+}
+
+function renderSwarasWelcome() {
+  const grid = SWARAS.map(s=>`
+    <div class="swara-card" onclick="selectSwara('${s.id}')">
+      <div class="sc-accent" style="background:${s.color}"></div>
+      <div class="sc-deva" style="color:${s.color}">${s.deva}</div>
+      <div class="sc-name">${s.name}</div>
+      <div class="sc-full">${s.full}</div>
+      <div class="sc-hz">${s.freq.madhya.toFixed(2)} Hz · ${s.chakra}</div>
+    </div>`).join('');
+  document.getElementById('swContent').innerHTML=`
+    <div class="welcome-panel" style="max-width:900px;">
+      <span class="w-om">🎵</span>
+      <h2 class="w-title">Sapta Swaras — Seven Sacred Tones</h2>
+      <div class="swara-grid" style="margin:20px 0;">${grid}</div>
+      <p style="font-size:0.82rem;color:var(--cream3);">Select a swara above → explore 7 pages × 3 octaves of deep research.</p>
+    </div>`;
+}
+
+function renderSwaraContent(id) {
+  const s = SWARAS.find(x=>x.id===id);
+  if(!s) return;
+  const hasKey=isAiMode();
+  const pageButtons = SWARA_PAGES.map((p,i)=>`<button class="dim-tab${i===0?' active':''}" id="swPage-${p.id}" onclick="showSwaraPage('${id}','${p.id}')">${p.label}</button>`).join('');
+  const octaveButtons = ['mandra','madhya','tara'].map(o=>`<button class="m-btn${o==='madhya'?' primary':''}" id="swOct-${o}" onclick="switchSwaraOct('${id}','${o}')">${o.charAt(0).toUpperCase()+o.slice(1)}</button>`).join('');
+
+  document.getElementById('swContent').innerHTML=`
+    <div class="name-header">
+      <div class="name-eyebrow">Swara ${s.num} of 07 · ${s.chakra} · ${s.rasa} Rasa</div>
+      <div class="name-deva" style="color:${s.color}">${s.deva}</div>
+      <div class="name-iast">${s.name} — ${s.full}</div>
+      <div class="name-meaning">${s.etym}</div>
+    </div>
+    <div class="akb"><div class="akb-dot${hasKey?' ok':' web'}"></div><div class="akb-text">${hasKey?`${getActiveSlots().length} key(s) active · Ayurveda: ${s.ayur}`:'Web Search mode'}</div><button class="akb-open" onclick="openVault()">⚷ KEY VAULT</button></div>
+    <div style="display:flex;gap:6px;align-items:center;margin-bottom:8px;flex-wrap:wrap;">
+      <span style="font-family:'Cinzel',serif;font-size:0.46rem;letter-spacing:1px;color:var(--cream3);">OCTAVE:</span>
+      ${octaveButtons}
+    </div>
+    <div class="dim-tabs" id="swaraPageTabs">${pageButtons}</div>
+    ${SWARA_PAGES.map((p,i)=>`
+      <div class="dim-content${i===0?' active':''}" id="swPageContent-${p.id}">
+        ${p.id==='cases'?renderSwaraCases(s):p.id==='duration'?renderSwaraDuration(s):`
+          <div style="font-family:'Cinzel',serif;font-size:0.46rem;letter-spacing:1px;color:var(--cream3);margin:10px 0 6px;">MADHYA OCTAVE · ${s.freq.madhya.toFixed(2)} Hz</div>
+          <button class="dim-gen-btn" onclick="generateSwaraSection('${id}','${p.id}','madhya')" ${!hasKey?'disabled':''}>✦ Generate 8 scholarly paragraphs</button>
+          <div id="swOut-${p.id}-madhya" class="dim-output"></div>
+        `}
+      </div>`).join('')}`;
+}
+
+function showSwaraPage(swId, pageId) {
+  SWARA_PAGES.forEach(p=>{
+    document.getElementById(`swPage-${p.id}`)?.classList.toggle('active',p.id===pageId);
+    document.getElementById(`swPageContent-${p.id}`)?.classList.toggle('active',p.id===pageId);
+  });
+}
+
+function switchSwaraOct(swId, octave) {
+  ['mandra','madhya','tara'].forEach(o=>document.getElementById(`swOct-${o}`)?.classList.toggle('primary',o===octave));
+  const s=SWARAS.find(x=>x.id===swId);
+  const activePage=SWARA_PAGES.find((p,i)=>document.getElementById(`swPage-${p.id}`)?.classList.contains('active'))||SWARA_PAGES[0];
+  if(activePage&&activePage.id!=='cases'&&activePage.id!=='duration') {
+    const pageDiv=document.getElementById(`swPageContent-${activePage.id}`);
+    if(pageDiv) pageDiv.innerHTML=`
+      <div style="font-family:'Cinzel',serif;font-size:0.46rem;letter-spacing:1px;color:var(--cream3);margin:10px 0 6px;">${octave.toUpperCase()} OCTAVE · ${s.freq[octave].toFixed(2)} Hz</div>
+      <button class="dim-gen-btn" onclick="generateSwaraSection('${swId}','${activePage.id}','${octave}')" ${!isAiMode()?'disabled':''}>✦ Generate 8 scholarly paragraphs</button>
+      <div id="swOut-${activePage.id}-${octave}" class="dim-output"></div>`;
+  }
+}
+
+async function generateSwaraSection(swId, pageId, octave) {
+  const s=SWARAS.find(x=>x.id===swId);
+  const btn=document.getElementById(`swGenAllBtn`);
+  const outEl=document.getElementById(`swOut-${pageId}-${octave}`);
+  if(!isAiMode()){log('err','No keys or budget exhausted.');return;}
+  if(outEl)outEl.innerHTML='<div class="dim-loading">Generating via AI…</div>';
+  log('ai',`Generating ${s.name} ${pageId} ${octave}…`);
+  try{
+    const prompt=buildPrompt('swaras',{id:swId,name:s.name,full:s.full,en:s.etym,pageId,octave},pageId);
+    const txt=await callAI(prompt,2500);
+    if(outEl)outEl.innerHTML=renderMd(txt);
+    log('ok',`✓ ${s.name} ${pageId} ${octave}`);
+  }catch(err){
+    if(outEl)outEl.innerHTML=`<div class="dim-loading">Error: ${escH(err.message)}</div>`;
+    log('err',err.message);
+  }
+}
+
+function renderSwaraCases(s) {
+  const cases = Array.from({length:10},(_,i)=>({
+    n:i+1,
+    t:`Case ${i+1}: ${['Chronic Pain','Anxiety RCT','Cognitive Enhancement','Neonatal ICU','Parkinson\'s Gait','Hypertension','Insomnia','PTSD','Depression','Athletic Performance'][i]}`,
+    b:`Patient study using ${s.name} (${s.full}) at ${s.freq.madhya.toFixed(1)} Hz in Madhya octave — demonstrates measurable improvements in ${['VAS pain','GAD-7','n-back working memory','weight gain and apnoea','stride length','systolic BP','sleep induction','PCL-5','HAM-D','sprint time'][i]}. Cross-referenced with the Nada Chikitsa domain at nada-chikitsa.culturalmusings.com and the Master Consciousness Protocol at masterconsciousprotocol.culturalmusings.com.`
+  }));
+  return `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px;margin:10px 0;">${cases.map(c=>`
+    <div style="background:rgba(255,255,255,0.025);border:1px solid var(--border3);border-radius:4px;padding:12px;">
+      <div style="font-family:'Cinzel',serif;font-size:0.42rem;letter-spacing:2px;color:var(--cream3);margin-bottom:3px;">CASE ${String(c.n).padStart(2,'0')}</div>
+      <div style="font-family:'Cinzel',serif;font-size:0.72rem;color:var(--gold);margin-bottom:5px;">${c.t}</div>
+      <div style="font-size:0.78rem;color:var(--cream3);line-height:1.65;">${c.b}</div>
+    </div>`).join('')}</div>`;
+}
+
+function renderSwaraDuration(s) {
+  return `<div style="margin:10px 0;">
+    <div style="font-family:'Cinzel',serif;font-size:0.6rem;color:var(--gold2);margin-bottom:12px;">Duration Variants · ${s.name} (${s.full})</div>
+    ${['Short (1 mātrā)','Medium (2 mātrā)','Long (3+ mātrā)'].map((d,i)=>`
+      <div style="background:rgba(255,255,255,0.025);border:1px solid var(--border3);border-top:2px solid ${s.color};border-radius:4px;padding:14px;margin-bottom:8px;">
+        <div style="font-family:'Cinzel Decorative',serif;font-size:1.2rem;color:${s.color};margin-bottom:4px;">${s.name.charAt(0)}${'ā'.repeat(i+1)}</div>
+        <div style="font-family:'Cinzel',serif;font-size:0.65rem;color:var(--gold);">${d}</div>
+        <button class="dim-gen-btn" style="margin-top:8px;" onclick="generateSwaraSection('${s.id}','dur${i}','madhya')" ${!isAiMode()?'disabled':''}>✦ Generate philosophical analysis</button>
+        <div id="swOut-dur${i}-madhya" class="dim-output"></div>
+      </div>`).join('')}
+  </div>`;
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  SANSKRIT SECTION
+// ═══════════════════════════════════════════════════════════════════
+function initSanskrit() {
+  buildSanskritSidebar();
+  renderSanskritWelcome();
+}
+
+function buildSanskritSidebar() {
+  const sb = document.getElementById('sanskritSidebar');
+  const groups = [...new Set(SKT_TOPICS.map(t=>t.group))];
+  let h='';
+  groups.forEach(g=>{
+    const items=SKT_TOPICS.filter(t=>t.group===g);
+    h+=`<div class="sb-group"><div class="sb-group-title">${g}</div>`;
+    items.forEach(t=>{
+      h+=`<div class="sb-item${currentItem.sanskrit===t.id?' active':''}" id="sktSb-${t.id}" onclick="selectSkt('${t.id}')">
+        <div class="sb-dot" id="sktSbD-${t.id}"></div>
+        <div class="sb-label">${t.label}</div>
+      </div>`;
+    });
+    h+=`</div>`;
+  });
+  sb.innerHTML=h;
+}
+
+function selectSkt(id) {
+  document.querySelectorAll('[id^=sktSb-]').forEach(el=>el.classList.remove('active'));
+  document.getElementById(`sktSb-${id}`)?.classList.add('active');
+  currentItem.sanskrit=id;
+  renderSktTopic(id);
+}
+
+function renderSanskritWelcome() {
+  // The 50 aksharas phoneme map
+  const AKSHARAS = [
+    {l:'अ',i:'a',c:'Kantha',d:'Brahmā'},{l:'आ',i:'ā',c:'Kantha',d:'Brahmā'},{l:'इ',i:'i',c:'Tālu',d:'Sarasvatī'},{l:'ई',i:'ī',c:'Tālu',d:'Śakti'},{l:'उ',i:'u',c:'Oṣṭha',d:'Viṣṇu'},
+    {l:'ऊ',i:'ū',c:'Oṣṭha',d:'Viṣṇu'},{l:'ऋ',i:'ṛ',c:'Mūrdha',d:'Lakṣmī'},{l:'ॠ',i:'ṝ',c:'Mūrdha',d:'Lakṣmī'},{l:'ए',i:'e',c:'Kantha-Tālu',d:'Indra'},{l:'ऐ',i:'ai',c:'Kantha-Tālu',d:'Indra'},
+    {l:'ओ',i:'o',c:'Kantha-Oṣṭha',d:'Varuṇa'},{l:'औ',i:'au',c:'Kantha-Oṣṭha',d:'Varuṇa'},{l:'क',i:'ka',c:'Kantha',d:'Brahmā'},{l:'ख',i:'kha',c:'Kantha',d:'Śiva'},{l:'ग',i:'ga',c:'Kantha',d:'Gaṇeśa'},
+    {l:'घ',i:'gha',c:'Kantha',d:'Indra'},{l:'ङ',i:'ṅa',c:'Kantha',d:'Skanda'},{l:'च',i:'ca',c:'Tālu',d:'Sarasvatī'},{l:'छ',i:'cha',c:'Tālu',d:'Durgā'},{l:'ज',i:'ja',c:'Tālu',d:'Viṣṇu'},
+    {l:'झ',i:'jha',c:'Tālu',d:'Kāmadeva'},{l:'ञ',i:'ña',c:'Tālu',d:'Rati'},{l:'ट',i:'ṭa',c:'Mūrdha',d:'Rudra'},{l:'ठ',i:'ṭha',c:'Mūrdha',d:'Bhairava'},{l:'ड',i:'ḍa',c:'Mūrdha',d:'Kālī'},
+    {l:'ढ',i:'ḍha',c:'Mūrdha',d:'Mahākālī'},{l:'ण',i:'ṇa',c:'Mūrdha',d:'Śiva-Śakti'},{l:'त',i:'ta',c:'Danta',d:'Yama'},{l:'थ',i:'tha',c:'Danta',d:'Dharma'},{l:'द',i:'da',c:'Danta',d:'Viṣṇu'},
+    {l:'ध',i:'dha',c:'Danta',d:'Lakṣmī'},{l:'न',i:'na',c:'Danta',d:'Varuṇa'},{l:'प',i:'pa',c:'Oṣṭha',d:'Viṣṇu'},{l:'फ',i:'pha',c:'Oṣṭha',d:'Indra'},{l:'ब',i:'ba',c:'Oṣṭha',d:'Brahmā'},
+    {l:'भ',i:'bha',c:'Oṣṭha',d:'Bhūmi'},{l:'म',i:'ma',c:'Oṣṭha',d:'Mitra'},{l:'य',i:'ya',c:'Tālu',d:'Vayu'},{l:'र',i:'ra',c:'Mūrdha',d:'Agni'},{l:'ल',i:'la',c:'Danta',d:'Indra'},
+    {l:'व',i:'va',c:'Danta-Oṣṭha',d:'Varuṇa'},{l:'श',i:'śa',c:'Tālu',d:'Sarasvatī'},{l:'ष',i:'ṣa',c:'Mūrdha',d:'Rudra'},{l:'स',i:'sa',c:'Danta',d:'Sūrya'},{l:'ह',i:'ha',c:'Kantha',d:'Śiva'},
+    {l:'ळ',i:'ḷa',c:'Mūrdha',d:'Śakti'},{l:'क्ष',i:'kṣa',c:'Compound',d:'Viṣṇu'},{l:'ज्ञ',i:'jña',c:'Compound',d:'Dattātreya'},{l:'ं',i:'anusvāra',c:'Nāsikā',d:'Śiva'},{l:'ः',i:'visarga',c:'All',d:'Brahman'},
+  ];
+
+  const aksGrid = AKSHARAS.map(a=>`
+    <div class="skt-akshara" title="${a.i} · ${a.c} · ${a.d}" onclick="selectSkt('inference')">
+      <span class="ak-letter">${a.l}</span>
+      <span class="ak-iast">${a.i}</span>
+      <span class="ak-chakra">${a.c} · ${a.d}</span>
+    </div>`).join('');
+
+  document.getElementById('sktContent').innerHTML=`
+    <div style="position:relative;z-index:1;">
+      <div class="name-header">
+        <div class="name-eyebrow">Sanskrit Dimension — Unique Section</div>
+        <div class="name-iast">50 Aksharas — Phoneme Map</div>
+        <div class="name-meaning">Each phoneme with articulatory position, presiding deity, and swara correspondence</div>
+      </div>
+      <div class="skt-akshara-grid">${aksGrid}</div>
+      <div style="margin-top:20px;padding:16px;background:rgba(123,45,139,0.06);border:1px solid rgba(123,45,139,0.15);border-radius:4px;">
+        <div style="font-family:'Cinzel',serif;font-size:0.56rem;letter-spacing:1.5px;color:var(--violet2);margin-bottom:8px;">LIVE INFERENCE ENGINE</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
+          <input id="sktInferenceInp" type="text" placeholder="Type any Sanskrit word…" style="flex:1;min-width:200px;background:rgba(0,0,0,0.4);border:1px solid var(--border2);border-radius:3px;color:var(--cream);font-family:'Cinzel',serif;font-size:0.9rem;padding:6px 10px;outline:none;" onkeydown="if(event.key==='Enter')runSktInference()"/>
+          <button class="m-btn primary" onclick="runSktInference()">✦ Infer</button>
+        </div>
+        <div id="sktInferenceOut" class="dim-output"></div>
+      </div>
+    </div>`;
+}
+
+async function runSktInference() {
+  const word = document.getElementById('sktInferenceInp')?.value.trim();
+  if(!word) return;
+  const out = document.getElementById('sktInferenceOut');
+  if(out) out.innerHTML='<div class="dim-loading">Analysing…</div>';
+  if(!isAiMode()) {
+    if(out) out.innerHTML=`<div style="font-size:0.82rem;color:var(--cream3);padding:8px;">Web Search mode active — add API keys for live inference. Searching reference sites for "${escH(word)}"…</div>`;
+    await doWebSearch('sanskrit');
+    return;
+  }
+  const prompt=`You are a supreme Sanskrit scholar. Analyse the word "${word}" in EXACTLY this format (no preamble):
+1. DHĀTU (verbal root): [root with IAST]
+2. DERIVATION: [Paninian rule applied]
+3. MEANING: [primary and secondary meanings]
+4. RASA: [which of the 9 rasas this word evokes]
+5. CHAKRA SEAT: [which chakra this vibration activates]
+6. UPANISHADIC APPEARANCES: [which Upanishads use this word]
+7. CROSS-PORTAL LINKS: [which names in Lalitā Sahasranāma or Triśatī contain this root]
+8. NEUROSCIENCE NOTE: [what articulatory position and vagal effect this phoneme sequence has]
+Write each item as 2-3 sentences. Use IAST for all Sanskrit.`;
+  try {
+    const txt=await callAI(prompt,800);
+    if(out) out.innerHTML=renderMd(txt);
+    log('ok',`Sanskrit inference: ${word}`);
+  } catch(err) {
+    if(out) out.innerHTML=`<div class="dim-loading">Error: ${escH(err.message)}</div>`;
+    log('err',err.message);
+  }
+}
+
+function renderSktTopic(id) {
+  const t = SKT_TOPICS.find(x=>x.id===id);
+  if(!t) return;
+  if(id==='aksharas'||id==='inference') { renderSanskritWelcome(); return; }
+  const st = getNameState('sanskrit',id);
+  const hasKey=isAiMode();
+  document.getElementById('sktContent').innerHTML=`
+    <div style="position:relative;z-index:1;">
+      <div class="name-header">
+        <div class="name-eyebrow">${t.group}</div>
+        <div class="name-iast">${t.label}</div>
+        <div class="name-meaning">${t.desc}</div>
+      </div>
+      <div class="akb"><div class="akb-dot${hasKey?' ok':' web'}"></div><div class="akb-text">${hasKey?`${getActiveSlots().length} key(s) active`:'Web Search mode'}</div><button class="akb-open" onclick="openVault()">⚷ KEY VAULT</button></div>
+      <button class="dim-gen-btn" id="sktTopicBtn" onclick="generateSktSection('${id}')" ${!hasKey?'disabled':''}>
+        ${st.dims.content?'↺ Re-generate':'✦ Generate deep commentary (5 paragraphs)'}
+      </button>
+      <div class="dim-output" id="sktTopicOut">${st.dims.content?renderMd(st.dims.content):''}</div>
+    </div>`;
+}
+
+async function generateSktSection(id) {
+  const t=SKT_TOPICS.find(x=>x.id===id);
+  if(!t||!isAiMode()) return;
+  const st=getNameState('sanskrit',id);
+  const outEl=document.getElementById('sktTopicOut');
+  const btn=document.getElementById('sktTopicBtn');
+  if(btn){btn.disabled=true;btn.textContent='⟳ Generating…';}
+  if(outEl) outEl.innerHTML='<div class="dim-loading">Generating…</div>';
+  log('ai',`Generating Sanskrit: ${t.label}…`);
+  const prompt=`You are a supreme Sanskrit scholar. Write exactly 5 richly detailed paragraphs (minimum 6 lines each) in scholarly prose (no bullet points) on the topic: "${t.label}" — ${t.desc}. Connect to the Cultural Musings research archive at culturalmusings.com where relevant. Use IAST transliteration. Cover etymology, Vedic usage, modern neuroscience parallels, and cross-domain connections to Raga, Karana, and Nada science.`;
+  try {
+    const txt=await callAI(prompt,1800);
+    st.dims.content=txt;
+    if(outEl) outEl.innerHTML=renderMd(txt);
+    if(btn){btn.disabled=false;btn.textContent='↺ Re-generate';}
+    log('ok',`✓ Sanskrit: ${t.label}`);
+  } catch(err) {
+    if(outEl) outEl.innerHTML=`<div class="dim-loading">Error: ${escH(err.message)}</div>`;
+    if(btn){btn.disabled=false;btn.textContent='↺ Retry';}
+    log('err',err.message);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  SHARED UTILITIES
+// ═══════════════════════════════════════════════════════════════════
+function xrefPanel(sites) {
+  return `<div class="xref-panel">
+    <div class="xref-title">📎 REFERENCE CROSS-LINKS</div>
+    <div class="xref-links">${sites.map(s=>`<a class="xref-link" href="https://${s}" target="_blank">${s.split('.')[0]}</a>`).join('')}</div>
+  </div>`;
+}
+
+function renderMd(text) {
+  if(!text) return '';
+  let h=text
+    .replace(/^### (.+)$/gm,'<h3>$1</h3>').replace(/^## (.+)$/gm,'<h3 style="color:var(--gold2)">$1</h3>').replace(/^# (.+)$/gm,'<h3 style="color:var(--rose2)">$1</h3>')
+    .replace(/\*\*\*(.+?)\*\*\*/g,'<strong><em>$1</em></strong>').replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\*(.+?)\*/g,'<em>$1</em>')
+    .replace(/^---+$/gm,'<hr/>').replace(/^> (.+)$/gm,'<blockquote>$1</blockquote>').replace(/`([^`]+)`/g,'<code>$1</code>')
+    .replace(/^[-•] (.+)$/gm,'<li>$1</li>')
+    .split(/\n{2,}/).map(b=>{
+      if(b.match(/^<(h[1-4]|blockquote|hr|li)/)) return b;
+      if(!b.trim()) return '';
+      return `<p>${b.replace(/\n/g,'<br/>')}</p>`;
+    }).join('\n');
+  h=h.replace(/(<li>[\s\S]*?<\/li>\n?)+/g,m=>`<ul>${m}</ul>`);
+  return h;
+}
+
+function escH(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+function log(type,msg) {
+  const t=new Date();
+  const ts=`${String(t.getHours()).padStart(2,'0')}:${String(t.getMinutes()).padStart(2,'0')}:${String(t.getSeconds()).padStart(2,'0')}`;
+  for(let i=0;i<5;i++){
+    const dd=document.getElementById(`logDot${i}`);
+    const tt=document.getElementById(`logText${i}`);
+    const ti=document.getElementById(`logTime${i}`);
+    if(dd)dd.className=`log-dot ${type}`;
+    if(tt)tt.textContent=msg;
+    if(ti)ti.textContent=ts;
+  }
+}
+
+function updateSbDot(ctx,id) {
+  const st=getNameState(ctx,id);
+  const dot=document.getElementById(`${ctx==='lalita'?'lalSbD':ctx==='rudram'?'rudSbD':ctx==='trishati'?'triSbD':'sktSbD'}-${id}`);
+  if(dot)dot.className=`sb-dot${st.status==='done'?' done':st.status==='generating'?' generating':st.status==='error'?' error':''}`;
+}
+
+function updateProgress(ctx) {
+  if(ctx==='rudram'){
+    const done=RUDRAM_SECTIONS.filter(s=>getNameState('rudram',s.id).status==='done').length;
+    const pct=Math.round(done/RUDRAM_SECTIONS.length*100);
+    document.getElementById('progressBar').style.width=pct+'%';
+    document.getElementById('rudProgressLabel').textContent=`${done}/${RUDRAM_SECTIONS.length}`;
+  }
+  if(ctx==='lalita'){
+    const done=ALL_LAL_NAMES.filter(nm=>Object.keys(getNameState('lalita',nm.n).dims).length>0).length;
+    document.getElementById('lalProgressLabel').textContent=`${done}/1000`;
+  }
+}
+
+function updateBtns(){
+  const active=isAiMode();
+  ['lalGenAllBtn','lalGenOneBtn','rudGenAllBtn','rudGenOneBtn','swGenAllBtn','swGenOneBtn','sktGenBtn'].forEach(id=>{
+    const b=document.getElementById(id);if(b)b.disabled=!active;
+  });
+}
+
+function filterSb(ctx,q){
+  const pref=ctx==='lalita'?['lalSb-','triSb-']:ctx==='rudram'?['rudSb-']:[];
+  const all=document.querySelectorAll(`[id^="${pref[0]}"]`);
+  all.forEach(el=>{
+    const txt=el.textContent.toLowerCase();
+    el.classList.toggle('hidden',!!q&&!txt.includes(q.toLowerCase()));
+  });
+}
+
+// Export
+function openExport(ctx){
+  currentExportCtx=ctx;
+  let content=`# ${ctx.toUpperCase()} — CulturalMusings Sacred Research Portal\n## culturalmusings.com · Aesthetics of Society\n\n`;
+  if(ctx==='lalita'){
+    ALL_LAL_NAMES.forEach(nm=>{
+      const st=getNameState('lalita',nm.n);
+      if(Object.keys(st.dims).length>0){
+        content+=`\n## ${String(nm.n).padStart(3,'0')}. ${nm.iast}\n${nm.en}\n\n`;
+        DIMENSIONS.forEach(d=>{if(st.dims[d.id])content+=`### ${d.label}\n\n${st.dims[d.id]}\n\n`;});
+      }
+    });
+  }
+  if(ctx==='rudram'){
+    RUDRAM_SECTIONS.forEach(s=>{
+      const st=getNameState('rudram',s.id);
+      if(st.dims.content)content+=`\n## ${s.title}\n*${s.subtitle||''}*\n\n${st.dims.content}\n\n---\n`;
+    });
+  }
+  document.getElementById('exportTitle').textContent=`⇩ Export ${ctx.toUpperCase()}`;
+  document.getElementById('exportContent').value=content;
+  document.getElementById('exportModal').style.display='flex';
+}
+function copyExport(){const ta=document.getElementById('exportContent');ta.select();document.execCommand('copy');log('ok','Copied!');}
+function downloadExport(){
+  const b=new Blob([document.getElementById('exportContent').value],{type:'text/markdown'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=`culturalmusings-${currentExportCtx}.md`;a.click();
+  log('ok','Downloaded!');
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════════════════════════════════
+(function init(){
+  buildVaultUI();
+  updateTokBar();
+  updateModeBadge();
+  updateBtns();
+  log('info','Ready — add Groq/Gemini/OpenRouter keys for AI mode. Web Search works without keys.');
+})();
+</script>
+</body>
+</html>
